@@ -1,3 +1,5 @@
+DROP database IF EXISTS joblister_db;
+
 CREATE database IF NOT EXISTS joblister_db;
 
 USE joblister_db;
@@ -36,7 +38,7 @@ CREATE TABLE `ads`
     `id`          BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `title`       TEXT            NOT NULL,
     `description` TEXT            NOT NULL,
-    `created`     DATETIME        NOT NULL,
+    `created`     DATE        NOT NULL,
     `user_id`     BIGINT UNSIGNED NOT NULL
 );
 

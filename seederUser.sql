@@ -1,7 +1,5 @@
 USE joblister_db;
 
-TRUNCATE TABLE users;
-
 INSERT INTO users (username, password, villain)
 VALUES ('DrEvil', '1milliondollars', true),
        ('EvilHenchMan211', '298394SJS91328', false),

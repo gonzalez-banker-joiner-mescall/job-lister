@@ -1,8 +1,6 @@
 USE joblister_db;
 
-TRUNCATE TABLE ad_cat;
-
-INSERT INTO ads (ad_id, cat_id)
+INSERT INTO ad_cat (ad_id, cat_id)
 VALUES (1, 1),
        (2, 3),
        (3, 2),

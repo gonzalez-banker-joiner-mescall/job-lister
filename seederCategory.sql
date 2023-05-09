@@ -1,7 +1,5 @@
 USE joblister_db;
 
-TRUNCATE TABLE categories;
-
 INSERT INTO categories (name)
 VALUES ('Space'),
        ('Violence'),
