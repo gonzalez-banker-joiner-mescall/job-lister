@@ -5,6 +5,7 @@ public class Ad {
     private long userId;
     private String title;
     private String description;
+    private String date;
 
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
@@ -13,10 +14,25 @@ public class Ad {
         this.description = description;
     }
 
+    public Ad(long userId, String title, String description, String date) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.date = date;
+    }
+
     public Ad(long userId, String title, String description) {
         this.userId = userId;
         this.title = title;
         this.description = description;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        date = date;
     }
 
     public long getId() {

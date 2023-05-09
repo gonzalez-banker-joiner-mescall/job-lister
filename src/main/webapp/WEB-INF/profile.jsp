@@ -10,7 +10,7 @@
 
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
-        <a href="/ads/create"
+        <a href="/ads/create">Create Ad!</a>
     </div>
 
 </body>

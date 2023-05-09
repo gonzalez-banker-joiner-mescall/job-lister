@@ -27,10 +27,13 @@ public class CreateAdServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User loggedInUser = (User) request.getSession().getAttribute("user");
+        String Date = "2023-03-09";
         Ad ad = new Ad(
             loggedInUser.getId(),
             request.getParameter("title"),
-            request.getParameter("description")
+            request.getParameter("description"),
+            Date
+
         );
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
