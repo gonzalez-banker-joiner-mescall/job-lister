@@ -24,7 +24,7 @@
         </div>
         <label>Are you a supervillain?
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="villain" value="tru" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="villain" value="true" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
                     Yes
                 </label>

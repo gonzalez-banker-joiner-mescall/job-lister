@@ -5,6 +5,7 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
+    <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
@@ -18,6 +19,10 @@
         </div>
     </div>
 
+    <div>
+        <h3>BIO</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam non quam lacus suspendisse faucibus. Eget arcu dictum varius duis at.</p>
+    </div>
 
 
     <div class="container">
@@ -36,5 +41,8 @@
         </c:forEach>
     </div>
 
+
+
+<script src="../js/profile.js"></script>
 </body>
 </html>
