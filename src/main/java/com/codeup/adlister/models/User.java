@@ -8,7 +8,12 @@ public class User {
 
     private boolean villain;
 
-    public User() {}
+    public User(long id, String username, String password, boolean villain) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.villain = villain;
+    }
 
     public User(String username, String password, boolean villain) {
         this.username = username;

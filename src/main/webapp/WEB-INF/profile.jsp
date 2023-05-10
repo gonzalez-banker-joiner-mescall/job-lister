@@ -31,7 +31,14 @@
 
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
+        <c:choose>
+            <c:when test="${sessionScope.user.villain}">
         <a href="/ads/create">Create Ad!</a>
+            </c:when>
+            <c:otherwise>
+
+            </c:otherwise>
+        </c:choose>
     </div>
 
     <div class="container">
