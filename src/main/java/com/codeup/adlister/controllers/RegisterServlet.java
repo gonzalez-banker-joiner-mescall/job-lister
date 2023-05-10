@@ -20,15 +20,15 @@ public class RegisterServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
-        String email = request.getParameter("email");
+        boolean isVillain = Boolean.parseBoolean(request.getParameter("villain"));
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
 
-        Boolean isVillain = true;
+//        Boolean isVillain = true;
 
         // validate input
         boolean inputHasErrors = username.isEmpty()
-            || email.isEmpty()
+//            || isVillain.isEmpty()
             || password.isEmpty()
             || (! password.equals(passwordConfirmation));
 
