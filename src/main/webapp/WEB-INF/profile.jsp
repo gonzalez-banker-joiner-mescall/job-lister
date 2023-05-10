@@ -15,13 +15,17 @@
             <img class="profile-image" src="https://s3-alpha.figma.com/hub/file/948140848/1f4d8ea7-e9d9-48b7-b70c-819482fb10fb-cover.png" alt="user_profile">
         </div>
         <div class="profile-edit">
-            <button class="btn btn-large">Edit Profile</button>
+            <button class="btn btn-large" id="edit-btn">Edit Profile</button>
         </div>
     </div>
 
     <div>
         <h3>BIO</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam non quam lacus suspendisse faucibus. Eget arcu dictum varius duis at.</p>
+        <p id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam non quam lacus suspendisse faucibus. Eget arcu dictum varius duis at.</p>
+    </div>
+
+    <div class="profile-edit">
+        <button class="btn btn-large" id="edit-Bio-btn">Edit Bio</button>
     </div>
 
 
