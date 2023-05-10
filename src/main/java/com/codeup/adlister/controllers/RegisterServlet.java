@@ -15,6 +15,7 @@ import java.io.IOException;
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println(request.getSession().getAttribute("message"));
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
@@ -32,6 +33,8 @@ public class RegisterServlet extends HttpServlet {
             || (! password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
+            request.getSession().setAttribute("message", "Username is required");
+//            request.getSession().setAttribute("messages", "Password is required");
             response.sendRedirect("/register");
             return;
         }
