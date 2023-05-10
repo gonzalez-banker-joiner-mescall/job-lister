@@ -3,16 +3,16 @@ package com.codeup.adlister.models;
 public class User {
     private long id;
     private String username;
-    private String email;
     private String password;
-
+    private String bio;
     private boolean villain;
 
-    public User(long id, String username, String password, boolean villain) {
+    public User(long id, String username, String password, boolean villain, String bio) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.villain = villain;
+        this.bio = bio;
     }
 
     public User(String username, String password, boolean villain) {
@@ -21,16 +21,21 @@ public class User {
         this.villain = villain;
     }
 
-    public User(String username, String email, String password) {
+    public User(String username, String password) {
         this.username = username;
-        this.email = email;
         this.password = password;
     }
 
-    public User(long id, String username, String email, String password) {
+    public User(String username, String password, boolean villain, String bio) {
+        this.username = username;
+        this.password = password;
+        this.villain = villain;
+        this.bio = bio;
+    }
+
+    public User(long id, String username, String password) {
         this.id = id;
         this.username = username;
-        this.email = email;
         this.password = password;
     }
 
@@ -50,14 +55,6 @@ public class User {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -72,5 +69,13 @@ public class User {
 
     public void setVillain(boolean villain) {
         this.villain = villain;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 }

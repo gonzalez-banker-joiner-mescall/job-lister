@@ -60,11 +60,14 @@ public class MySQLUsersDao implements Users {
         if (!rs.next()) {
             return null;
         }
+
         return new User(
                 rs.getLong("id"),
                 rs.getString("username"),
                 rs.getString("password"),
-                rs.getBoolean("villain")
+                rs.getBoolean("villain"),
+                rs.getString("bio")
+
         );
     }
 

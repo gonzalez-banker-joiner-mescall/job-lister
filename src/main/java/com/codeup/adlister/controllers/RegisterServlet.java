@@ -23,7 +23,6 @@ public class RegisterServlet extends HttpServlet {
         boolean isVillain = Boolean.parseBoolean(request.getParameter("villain"));
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
-
 //        Boolean isVillain = true;
 
         // validate input
@@ -36,6 +35,7 @@ public class RegisterServlet extends HttpServlet {
             response.sendRedirect("/register");
             return;
         }
+
 
         // create and save a new user
         User user = new User(username, password, isVillain);

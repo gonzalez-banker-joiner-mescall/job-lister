@@ -104,12 +104,14 @@
                 </div>
                 <div class="form-check">
                     <input value="9" class="form-check-input" type="radio" name="category" id="science" checked>
+
                     <label class="form-check-label" for="science">
                         Science
                     </label>
                 </div>
                 <div class="form-check">
                     <input value="10" class="form-check-input" type="radio" name="category" id="ransom" checked>
+
                     <label class="form-check-label" for="ransom">
                         Ransom
                     </label>
