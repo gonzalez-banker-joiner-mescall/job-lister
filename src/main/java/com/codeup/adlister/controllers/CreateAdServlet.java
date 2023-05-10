@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.Date;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
@@ -27,13 +28,13 @@ public class CreateAdServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User loggedInUser = (User) request.getSession().getAttribute("user");
-        String Date = "2023-03-09";
+        Date date = Date.valueOf(java.time.LocalDate.now());
+
         Ad ad = new Ad(
             loggedInUser.getId(),
             request.getParameter("title"),
             request.getParameter("description"),
-            Date
-
+            date
         );
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
