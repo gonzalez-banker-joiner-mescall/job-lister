@@ -1,4 +1,5 @@
 package com.codeup.adlister.dao;
+
 import com.codeup.adlister.util.Config;
 
 
@@ -20,9 +21,9 @@ public class MySQLAdsDao implements Ads {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -33,7 +34,7 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT * FROM ads ORDER BY created DESC");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -59,12 +60,27 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public List<Ad> allById(Long id) {
+        try {
+            String byIdQuery = "SELECT * FROM ads WHERE user_id = ?";
+            PreparedStatement statement = connection.prepareStatement(byIdQuery);
+            statement.setLong(1, id);
+
+            ResultSet resultSet = statement.executeQuery();
+            return createAdsFromResults(resultSet);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
-            rs.getLong("id"),
-            rs.getLong("user_id"),
-            rs.getString("title"),
-            rs.getString("description")
+                rs.getLong("id"),
+                rs.getLong("user_id"),
+                rs.getString("title"),
+                rs.getString("description"),
+                rs.getDate("created")
         );
     }
 
@@ -82,8 +98,6 @@ public class MySQLAdsDao implements Ads {
 
         System.out.println(date);
     }
-
-
 }
 
 

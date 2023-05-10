@@ -29,6 +29,14 @@ public class Ad {
         this.description = description;
     }
 
+    public Ad(long id, long userId, String title, String description, Date date) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.date = date;
+    }
+
     public Date getDate() {
         return date;
     }
