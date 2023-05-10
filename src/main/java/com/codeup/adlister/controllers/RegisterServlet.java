@@ -33,11 +33,12 @@ public class RegisterServlet extends HttpServlet {
             || (! password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
-            request.getSession().setAttribute("message", "Username is required");
+            request.getSession().setAttribute("message", "Invalid Credentials");
 //            request.getSession().setAttribute("messages", "Password is required");
             response.sendRedirect("/register");
             return;
         }
+        request.getSession().removeAttribute("message");
 
 
         // create and save a new user
