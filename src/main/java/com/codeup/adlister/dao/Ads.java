@@ -14,5 +14,7 @@ public interface Ads {
 
     void update(Ad ad);
 
-    void delete(long id);
+    void delete(Long id);
+
+    void adCatInsert(Long result, Long category);
 }

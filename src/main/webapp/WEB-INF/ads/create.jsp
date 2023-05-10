@@ -55,61 +55,61 @@
             <label for="categories">Please Select Your Category</label>
             <div>
                 <div id="categories" class="form-check">
-                    <input value="1" class="form-check-input" type="radio" name="amount" id="space" checked>
+                    <input value="1" class="form-check-input" type="radio" name="category" id="space" checked>
                     <label class="form-check-label" for="space">
                         Space
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="2" class="form-check-input" type="radio" name="amount" id="violence" checked>
+                    <input value="2" class="form-check-input" type="radio" name="category" id="violence" checked>
                     <label class="form-check-label" for="violence">
                         Violence
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="3" class="form-check-input" type="radio" name="amount" id="theft">
+                    <input value="3" class="form-check-input" type="radio" name="category" id="theft">
                     <label class="form-check-label" for="theft">
                         Theft
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="4" class="form-check-input" type="radio" name="amount" id="career" checked>
+                    <input value="4" class="form-check-input" type="radio" name="category" id="career" checked>
                     <label class="form-check-label" for="career">
                         Career
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="5" class="form-check-input" type="radio" name="amount" id="harassment" checked>
+                    <input value="5" class="form-check-input" type="radio" name="category" id="harassment" checked>
                     <label class="form-check-label" for="harassment">
                         Harassment
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="6" class="form-check-input" type="radio" name="amount" id="fraud" checked>
+                    <input value="6" class="form-check-input" type="radio" name="category" id="fraud" checked>
                     <label class="form-check-label" for="fraud">
                         Fraud
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="7" class="form-check-input" type="radio" name="amount" id="cyber">
+                    <input value="7" class="form-check-input" type="radio" name="category" id="cyber">
                     <label class="form-check-label" for="cyber">
                         Cyber
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="8" class="form-check-input" type="radio" name="amount" id="vandalism" checked>
+                    <input value="8" class="form-check-input" type="radio" name="category" id="vandalism" checked>
                     <label class="form-check-label" for="vandalism">
                         Vandalism
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="9" class="form-check-input" type="radio" name="amount" id="science" checked>
+                    <input value="9" class="form-check-input" type="radio" name="category" id="science" checked>
                     <label class="form-check-label" for="science">
                         Science
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="10" class="form-check-input" type="radio" name="amount" id="ransom" checked>
+                    <input value="10" class="form-check-input" type="radio" name="category" id="ransom" checked>
                     <label class="form-check-label" for="ransom">
                         Ransom
                     </label>

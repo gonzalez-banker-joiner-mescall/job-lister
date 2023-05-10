@@ -61,6 +61,21 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public void adCatInsert(Long result, Long category) {
+        try {
+            String adCatInsertQuery = "INSERT INTO ad_cat(ad_id, cat_id) VALUES (?, ?)";
+            PreparedStatement statement = connection.prepareStatement(adCatInsertQuery);
+
+            statement.setLong(1, result);
+            statement.setLong(2, category);
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public List<Ad> allById(Long id) {
         try {
             String byIdQuery = "SELECT * FROM ads WHERE user_id = ?";
@@ -76,11 +91,22 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public void update(Ad ad) {
+        try {
+            String updateQuery = "UPDATE ads SET title = ?, description = ? WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(updateQuery);
 
+            statement.setString(1, ad.getTitle());
+            statement.setString(2, ad.getDescription());
+            statement.setLong(3, ad.getId());
+
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
         try {
             String deleteQuery = "DELETE FROM ads WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(deleteQuery);

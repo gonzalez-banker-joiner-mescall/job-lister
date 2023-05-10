@@ -16,7 +16,7 @@ import java.sql.Date;
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getSession().getAttribute("user") == null) {
+        if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             // add a return statement to exit out of the entire method.
             return;
@@ -31,12 +31,19 @@ public class CreateAdServlet extends HttpServlet {
         Date date = Date.valueOf(java.time.LocalDate.now());
 
         Ad ad = new Ad(
-            loggedInUser.getId(),
-            request.getParameter("title"),
-            request.getParameter("description"),
-            date
+                loggedInUser.getId(),
+                request.getParameter("title"),
+                request.getParameter("description"),
+                date
         );
-        DaoFactory.getAdsDao().insert(ad);
+
+        Long category = Long.valueOf(request.getParameter("category"));
+
+
+        Long result = DaoFactory.getAdsDao().insert(ad);
+
+        DaoFactory.getAdsDao().adCatInsert(result, category);
+
         response.sendRedirect("/ads");
     }
 }

@@ -38,6 +38,15 @@ public class ListAdsDao implements Ads {
     }
 
     @Override
+    public void delete(Long id) {
+
+    }
+
+    @Override
+    public void adCatInsert(Long result, Long category) {
+    }
+
+
     public void delete(long id) {
 
     }
