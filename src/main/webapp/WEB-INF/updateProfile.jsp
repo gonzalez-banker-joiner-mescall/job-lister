@@ -36,27 +36,27 @@
                 <option value="false">Henchman</option>
             </select>
         </div>
-<%--        <div class="form-check">--%>
-<%--            <input class="form-check-input" type="radio" name="villain" value="${sessionScope.user.villain}" id="flexRadioDefault1">--%>
-<%--            <label class="form-check-label" for="flexRadioDefault1">--%>
-<%--                Supervillain--%>
-<%--            </label>--%>
-<%--        </div>--%>
-<%--        <div class="form-check">--%>
-<%--            <input class="form-check-input" type="radio" name="villain" value="${sessionScope.user.villain}" id="flexRadioDefault2">--%>
-<%--            <label class="form-check-label" for="flexRadioDefault2">--%>
-<%--                Henchman--%>
-<%--            </label>--%>
-<%--        </div>--%>
+        <%--        <div class="form-check">--%>
+        <%--            <input class="form-check-input" type="radio" name="villain" value="${sessionScope.user.villain}" id="flexRadioDefault1">--%>
+        <%--            <label class="form-check-label" for="flexRadioDefault1">--%>
+        <%--                Supervillain--%>
+        <%--            </label>--%>
+        <%--        </div>--%>
+        <%--        <div class="form-check">--%>
+        <%--            <input class="form-check-input" type="radio" name="villain" value="${sessionScope.user.villain}" id="flexRadioDefault2">--%>
+        <%--            <label class="form-check-label" for="flexRadioDefault2">--%>
+        <%--                Henchman--%>
+        <%--            </label>--%>
+        <%--        </div>--%>
     </label>
-        <input type="submit" class="btn btn-primary btn-block">
+    <input type="submit" class="btn btn-primary btn-block">
 </form>
-<form action="/profile/update" method="post">
-    <div class="form-group">
-        <label for="delete">Delete Profile (Your profile will be completely deleted it will be gone, kaput, completely
-            destroyed, and you will never be able to come here again!...until you make another profile.)</label>
-        <input id="delete" name="delete" class="form-control" type="Submit" required>
-    </div>
-</form>
+<div class="form-group">
+    <label for="delete">Delete Profile (Your profile will be completely deleted it will be gone, kaput, completely
+        destroyed, and you will never be able to come here again!...until you make another profile.)</label>
+    <a href="/profile/delete?userId=${sessionScope.user.id}" onclick="return confirm('Are you sure about that?')">
+        <button>Delete</button>
+    </a>
+</div>
 </body>
 </html>
