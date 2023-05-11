@@ -1,0 +1,35 @@
+body {
+    background-color: mediumseagreen;
+}
+h1 {
+    text-align: center;
+}
+.minion-text {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    justify-content: right;
+    margin-left: auto;
+
+
+}
+
+.minion-message {
+    display: block;
+    height: 500px;
+    width: 400px;
+}
+
+.minion-text p {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-10%, -100%);
+    margin: 0;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+.minion-container {
+    display: flex;
+}

@@ -23,6 +23,7 @@
             </a>
         </div>
     </div>
+
 </div>
 
 <div>
@@ -53,6 +54,7 @@
         </div>
     </c:forEach>
 </div>
+
 
 
 <script src="../js/profile.js"></script>
