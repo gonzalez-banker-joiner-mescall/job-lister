@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Arrays;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
@@ -37,12 +38,13 @@ public class CreateAdServlet extends HttpServlet {
                 date
         );
 
-        Long category = Long.valueOf(request.getParameter("category"));
-
+        String[] categories = request.getParameterValues("category");
 
         Long result = DaoFactory.getAdsDao().insert(ad);
 
-        DaoFactory.getAdsDao().adCatInsert(result, category);
+        for (String category : categories) {
+            DaoFactory.getAdsDao().adCatInsert(result, Long.valueOf(category));
+        }
 
         response.sendRedirect("/ads");
     }

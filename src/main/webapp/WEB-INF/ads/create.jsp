@@ -53,33 +53,33 @@
 
 <%--            CHOOSE CATEGORY--%>
             <label for="categories">Please Select Your Category</label>
-            <div>
-                <div id="categories" class="form-check">
-                    <input value="1" class="form-check-input" type="checkbox" name="category" id="constructionMaintenance">
+            <div  id="categories">
+                <div class="form-check">
+                    <input value="1" class="form-check" type="checkbox" name="category" id="constructionMaintenance">
                     <label class="form-check-label" for="constructionMaintenance">
                         Construction & Maintenance
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="2" class="form-check-input" type="checkbox" name="category" id="researchDev">
+                    <input value="2" class="form-check" type="checkbox" name="category" id="researchDev">
                     <label class="form-check-label" for="researchDev">
                         Research & Development
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="3" class="form-check-input" type="checkbox" name="category" id="ops">
+                    <input value="3" class="form-check" type="checkbox" name="category" id="ops">
                     <label class="form-check-label" for="ops">
                         Operation & Logistics
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="4" class="form-check-input" type="checkbox" name="category" id="combat">
+                    <input value="4" class="form-check" type="checkbox" name="category" id="combat">
                     <label class="form-check-label" for="combat">
                         Combat & Defense
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="5" class="form-check-input" type="checkbox" name="category" id="miscellaneous">
+                    <input value="5" class="form-check" type="checkbox" name="category" id="miscellaneous">
                     <label class="form-check-label" for="miscellaneous">
                         Miscellaneous
                     </label>
