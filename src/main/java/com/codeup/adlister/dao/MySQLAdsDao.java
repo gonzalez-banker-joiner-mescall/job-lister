@@ -7,6 +7,7 @@ import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.util.Config;
 import com.mysql.cj.jdbc.Driver;
 
+import javax.lang.model.type.ArrayType;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -85,6 +86,19 @@ public class MySQLAdsDao implements Ads {
             ResultSet resultSet = statement.executeQuery();
             return createAdsFromResults(resultSet);
         } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Ad> allByCategory(Long id){
+        try{
+            String byCategoryQuery = "SELECT a.id, a.title, a.description, a.created, a.user_id FROM ads a JOIN ad_cat ac ON a.id = ac.ad_id JOIN categories c ON c.id = ac.cat_id WHERE c.id = ? ORDER BY a.created DESC";
+            PreparedStatement statement = connection.prepareStatement(byCategoryQuery);
+
+            ResultSet resultSet = statement.executeQuery();
+            return createAdsFromResults(resultSet);
+
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

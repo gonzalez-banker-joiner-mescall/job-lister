@@ -39,7 +39,7 @@ CREATE TABLE `ads`
     `id`          BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `title`       TEXT            NOT NULL,
     `description` TEXT            NOT NULL,
-    `created`     DATE        NOT NULL,
+    `created`     DATE            NOT NULL,
     `user_id`     BIGINT UNSIGNED NOT NULL
 );
 
@@ -48,7 +48,9 @@ ALTER TABLE
     ADD CONSTRAINT `ad_cat_cat_id_foreign` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`);
 ALTER TABLE
     `ad_cat`
-    ADD CONSTRAINT `ad_cat_ad_id_foreign` FOREIGN KEY (`ad_id`) REFERENCES `ads` (`id`);
+    ADD CONSTRAINT `ad_cat_ad_id_foreign` FOREIGN KEY (`ad_id`) REFERENCES `ads` (`id`)
+        ON DELETE CASCADE;
 ALTER TABLE
     `ads`
-    ADD CONSTRAINT `ads_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+    ADD CONSTRAINT `ads_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+        ON DELETE CASCADE;
