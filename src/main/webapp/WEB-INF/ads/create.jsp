@@ -55,67 +55,36 @@
             <label for="categories">Please Select Your Category</label>
             <div>
                 <div id="categories" class="form-check">
-                    <input value="1" class="form-check-input" type="checkbox" name="category" id="space">
-                    <label class="form-check-label" for="space">
-                        Space
+                    <input value="1" class="form-check-input" type="checkbox" name="category" id="constructionMaintenance">
+                    <label class="form-check-label" for="constructionMaintenance">
+                        Construction & Maintenance
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="2" class="form-check-input" type="checkbox" name="category" id="violence">
-                    <label class="form-check-label" for="violence">
-                        Violence
+                    <input value="2" class="form-check-input" type="checkbox" name="category" id="researchDev">
+                    <label class="form-check-label" for="researchDev">
+                        Research & Development
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="3" class="form-check-input" type="checkbox" name="category" id="theft">
-                    <label class="form-check-label" for="theft">
-                        Theft
+                    <input value="3" class="form-check-input" type="checkbox" name="category" id="ops">
+                    <label class="form-check-label" for="ops">
+                        Operation & Logistics
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="4" class="form-check-input" type="checkbox" name="category" id="career">
-                    <label class="form-check-label" for="career">
-                        Career
+                    <input value="4" class="form-check-input" type="checkbox" name="category" id="combat">
+                    <label class="form-check-label" for="combat">
+                        Combat & Defense
                     </label>
                 </div>
                 <div class="form-check">
-                    <input value="5" class="form-check-input" type="checkbox" name="category" id="harassment">
-                    <label class="form-check-label" for="harassment">
-                        Harassment
+                    <input value="5" class="form-check-input" type="checkbox" name="category" id="miscellaneous">
+                    <label class="form-check-label" for="miscellaneous">
+                        Miscellaneous
                     </label>
                 </div>
-                <div class="form-check">
-                    <input value="6" class="form-check-input" type="checkbox" name="category" id="fraud">
-                    <label class="form-check-label" for="fraud">
-                        Fraud
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input value="7" class="form-check-input" type="checkbox" name="category" id="cyber">
-                    <label class="form-check-label" for="cyber">
-                        Cyber
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input value="8" class="form-check-input" type="checkbox" name="category" id="vandalism">
-                    <label class="form-check-label" for="vandalism">
-                        Vandalism
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input value="9" class="form-check-input" type="checkbox" name="category" id="science">
 
-                    <label class="form-check-label" for="science">
-                        Science
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input value="10" class="form-check-input" type="checkbox" name="category" id="ransom">
-
-                    <label class="form-check-label" for="ransom">
-                        Ransom
-                    </label>
-                </div>
             </div>
 
 <%--CHOOSE DESCRIPTION--%>
