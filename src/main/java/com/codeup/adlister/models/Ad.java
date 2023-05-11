@@ -37,6 +37,7 @@ public class Ad {
         this.date = date;
     }
 
+
     public Date getDate() {
         return date;
     }

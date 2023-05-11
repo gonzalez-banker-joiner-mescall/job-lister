@@ -46,6 +46,11 @@ public class ListAdsDao implements Ads {
     public void adCatInsert(Long result, Long category) {
     }
 
+    @Override
+    public Ad findAdById(Long adId) {
+        return null;
+    }
+
 
     public void delete(long id) {
 

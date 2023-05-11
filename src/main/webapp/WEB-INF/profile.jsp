@@ -49,6 +49,7 @@
             <div class="col-md-6">
                 <h2>${ad.title}</h2>
                 <p>${ad.description}</p>
+                <a href="/ads/update?adId=${ad.id}"><button>Edit this ad</button></a>
             </div>
         </c:forEach>
     </div>

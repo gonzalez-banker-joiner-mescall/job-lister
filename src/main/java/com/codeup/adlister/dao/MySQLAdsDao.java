@@ -4,13 +4,8 @@ import com.codeup.adlister.util.Config;
 
 
 import com.codeup.adlister.models.Ad;
-import com.codeup.adlister.util.Config;
 import com.mysql.cj.jdbc.Driver;
 
-import javax.lang.model.type.ArrayType;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -90,6 +85,20 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public Ad findAdById(Long id) {
+        try {
+            String byIdQuery = "SELECT * FROM ads WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(byIdQuery);
+            statement.setLong(1, id);
+
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            return extractAd(resultSet);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public List<Ad> allByCategory(Long id){
         try{
             String byCategoryQuery = "SELECT a.id, a.title, a.description, a.created, a.user_id FROM ads a JOIN ad_cat ac ON a.id = ac.ad_id JOIN categories c ON c.id = ac.cat_id WHERE c.id = ? ORDER BY a.created DESC";
@@ -114,6 +123,7 @@ public class MySQLAdsDao implements Ads {
             statement.setLong(3, ad.getId());
 
             statement.executeUpdate();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
