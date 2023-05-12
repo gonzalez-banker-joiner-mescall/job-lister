@@ -18,6 +18,14 @@
                  src="https://s3-alpha.figma.com/hub/file/948140848/1f4d8ea7-e9d9-48b7-b70c-819482fb10fb-cover.png"
                  alt="profile image">
         </div>
+
+        <div class="input-group m-3">
+            <form method="post" action="profile" enctype="multipart/form-data">
+            <input type="file" name="profilePic" class="form-control" id="inputGroupFile02">
+                <input type="submit" value="upload">
+            </form>
+        </div>
+
         <div class="mt-3">
             <h3>Bio:</h3>
             <p id="bio">${sessionScope.user.bio}</p>
@@ -28,13 +36,10 @@
     </div>
 </div>
 
-
 <div class="container mt-4">
     <c:if test="${sessionScope.user.villain}">
         <a href="/ads/create" class="btn btn-primary">Create Ad!</a>
-
         <h1 class="my-4">Here Are Your Ads</h1>
-
         <div class="row">
             <c:forEach var="ad" items="${ads}">
                 <div class="col-md-6">

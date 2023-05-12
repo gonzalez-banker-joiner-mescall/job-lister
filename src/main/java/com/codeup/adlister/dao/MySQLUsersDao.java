@@ -72,6 +72,19 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    public void updateImg(User user) {
+        String query = "UPDATE users SET img = ? WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setBlob(1, user.getImg());
+            stmt.setLong(2, user.getId());
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating new user", e);
+        }
+    }
+
     public void delete(Long id) {
         String query = "DELETE FROM users WHERE id = ?";
         try {

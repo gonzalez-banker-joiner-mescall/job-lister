@@ -11,4 +11,6 @@ public interface Users {
     void update(User updatedUser);
 
     void delete(Long userId);
+
+    void updateImg(User user);
 }
