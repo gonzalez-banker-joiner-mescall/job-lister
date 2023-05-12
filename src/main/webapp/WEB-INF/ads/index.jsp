@@ -7,6 +7,8 @@
     </jsp:include>
 <%--    added css link--%>
     <link rel="stylesheet" href="../../css/ads.css">
+<%--    added js font style --%>
+    <script src="https://kit.fontawesome.com/60b822ab43.js" crossorigin="anonymous"></script>
 
 </head>
 <title>Get Hired</title>
@@ -21,11 +23,14 @@
         <c:forEach var="ad" items="${ads}">
 
             <div class="box">
-                <h2>${ad.title}</h2>
-                <p>${ad.description}</p>
-                <a href="/ads/view?adId=${ad.id}">
-                    <button name="viewAd">CLICK HERE TO SEE AD</button>
-                </a>
+                <article>
+                    <h2>Job: ${ad.title}</h2>
+                    <p>Details: ${ad.description}</p>
+
+                    <a href="/ads/view?adId=${ad.id}">Click For More:
+                        <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #1760de;"></i>
+                    </a>
+                </article>
             </div>
 
         </c:forEach>
