@@ -6,6 +6,7 @@
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
     <link rel="stylesheet" href="../css/background.css">
+    <link rel="stylesheet" href="../css/ads.css">
 
     <style>
         card {
@@ -43,19 +44,17 @@
 
         <div class="row">
             <c:forEach var="ad" items="${ads}">
-                <div class="col-md-6">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h2 class="card-title">${ad.title}</h2>
-                            <p class="card-text">${ad.description}</p>
+                <div class="box col-md-5">
+                        <article class="boxTwo">
+                            <h2>Job: ${ad.title}</h2>
+                            <p>Details: ${ad.description}</p>
                             <a href="/ads/update?adId=${ad.id}" class="btn btn-primary btn-sm">Update Ad</a>
-                        </div>
-                    </div>
+                        </article>
                 </div>
             </c:forEach>
         </div>
     </c:if>
 </div>
-
+<script src="../js/ads.js"></script>
 </body>
 </html>
