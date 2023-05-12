@@ -16,7 +16,7 @@
 <title>Get Hired</title>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="container center">
+<div class="container center my-3">
     <h1>Here Are all the ads!</h1>
     <jsp:include page="/WEB-INF/partials/filter.jsp" />
 
