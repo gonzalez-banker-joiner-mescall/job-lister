@@ -5,27 +5,33 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads" />
     </jsp:include>
-    <%--BOOTSTRAP--%>
-<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">--%>
+<%--    added css link--%>
+    <link rel="stylesheet" href="../../css/ads.css">
+
 </head>
+<title>Get Hired</title>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
-<div class="container">
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<div class="container center">
     <h1>Here Are all the ads!</h1>
+    <jsp:include page="/WEB-INF/partials/filter.jsp" />
 
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-        </div>
-        <a href="/ads/view?adId=${ad.id}">
-            <button name="viewAd">CLICK HERE TO SEE AD</button>
-        </a>
-    </c:forEach>
+
+
+        <c:forEach var="ad" items="${ads}">
+
+            <div class="box">
+                <h2>${ad.title}</h2>
+                <p>${ad.description}</p>
+                <a href="/ads/view?adId=${ad.id}">
+                    <button name="viewAd">CLICK HERE TO SEE AD</button>
+                </a>
+            </div>
+
+        </c:forEach>
+
 </div>
-
-<%--BOOTSTRAP--%>
-<%--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>--%>
+<%--    added js link--%>
+<script src="../../js/ads.js"></script>
 </body>
 </html>
