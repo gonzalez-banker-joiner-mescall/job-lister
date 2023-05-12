@@ -6,6 +6,12 @@
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
     <link rel="stylesheet" href="../css/background.css">
+
+    <style>
+        card {
+            background-color: #fefae0 !important;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
