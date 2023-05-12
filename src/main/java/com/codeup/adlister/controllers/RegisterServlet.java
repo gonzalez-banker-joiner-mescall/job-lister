@@ -40,17 +40,19 @@ public class RegisterServlet extends HttpServlet {
             String hash = Password.hash(user.getPassword());
             user.setPassword(hash);
             DaoFactory.getUsersDao().insert(user);
+            request.getSession().removeAttribute("message");
+            request.getSession().removeAttribute("usernameTaken");
             response.sendRedirect("/login");
         } else {
             usernameTaken = true;
             request.getSession().setAttribute("usernameTaken", usernameTaken);
-            String message = "That username is already taken, please pick another";
+            String message = "Username is already taken.";
             request.getSession().setAttribute("message", message);
             response.sendRedirect("/register");
             return;
 
         }
-//        request.getSession().removeAttribute("message");
+//
 
 
     }

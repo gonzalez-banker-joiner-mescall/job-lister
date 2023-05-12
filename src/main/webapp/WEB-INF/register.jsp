@@ -19,7 +19,7 @@
         </div>
 <%--        checks if username is taken already--%>
     <c:if test="${sessionScope.usernameTaken}">
-        <p class="text-bg-danger">${sessionScope.message}</p>
+        <p class="text-danger">${sessionScope.message}</p>
     </c:if>
         <div class="form-group">
 

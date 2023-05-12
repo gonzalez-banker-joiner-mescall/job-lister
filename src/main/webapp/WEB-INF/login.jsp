@@ -19,6 +19,9 @@
             <label for="password">Password</label>
             <input id="password" name="password" class="form-control" type="password" required>
         </div>
+        <c:if test="${sessionScope.wrongPassword}">
+            <p class="text-danger">${sessionScope.message}</p>
+        </c:if>
         <input type="submit" class="btn btn-primary btn-block" value="Log In">
     </form>
 </div>
