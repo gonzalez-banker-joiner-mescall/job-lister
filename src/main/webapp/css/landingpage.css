@@ -1,9 +1,14 @@
 body {
-    background-color: mediumseagreen;
-    background-image: url("../assets/img/home-back.png");
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+.large-container {
+    background-image: url("../assets/img/home-back-gru.png");
     background-repeat: no-repeat;
     background-size: 100% 800px;
-    background-position: 80%;
+    height: 100%;
 }
 h1 {
     text-align: center;
@@ -16,42 +21,44 @@ h1 {
     float: top;
     color: gold;
 }
+
+
 .minion-text {
-    position: relative;
-    width: 400px;
-    height: 500px;
-    float: right;
-    right: 155px;
-    top: 55px;
-
-
-}
-.back-drop {
-
+    position: absolute;
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    bottom: 440px;
+    left: 200px;
+    float: top;
 }
 .minion-message {
-    display: block;
-    height: 500px;
-    width: 400px;
+    position: fixed;
+    width: 30%;
+    height: 40%;
+    right: 0;
+    bottom: 0;
+}
+.minion-text p {
+    position: fixed;
+    top: 74%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    font-size: 15px;
+    text-align: center;
+
 }
 
-.minion-text p {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-10%, -100%);
-    margin: 0;
-    padding: 15px;
-    font-size: 18px;
-    text-align: center;
-}
+
+
 .minion-car {
-    position: fixed;
+    position: absolute;
     right: -700px; /* Minions in car will start off screen to right */
-    top: 280px;
+    top: 360px;
+    /*bottom: 0;*/
 }
-/*.car-container {*/
-/*    width: 1200px; !* Make sure this width is larger than the screen width *!*/
-/*    height: 500px;*/
-/*    position: relative;*/
-/*}*/
+.overflow-me {
+    float: top;
+}

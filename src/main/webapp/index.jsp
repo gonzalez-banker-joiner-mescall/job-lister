@@ -9,23 +9,21 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="container">
-    <h1>Welcome to Minion Adlister!</h1>
-</div>
-<p class="quote"><em>"Life Is Just Like That Sometimes. We're Hoping For A Unicorn, And We Get A Goat" - Felonius
-    Gru</em></p>
-<div class="back-drop">
-    <div class="minion-container">
-        <div class="minion-text">
-            <img class="minion-message" src="./assets/img/minon-messageimg.png">
-            <p id="minion-bubble">Hello Minions this is a site fore you to accept jobs from your supreme leader, Gru and senior level
-                minions.</p>
-        </div>
+<div class="large-container">
+    <div class="container">
+        <h1>Welcome to Minion Adlister!</h1>
     </div>
+    <p class="quote"><em>"Life Is Just Like That Sometimes. We're Hoping For A Unicorn, And We Get A Goat" - Felonius
+        Gru</em></p>
+
 </div>
-
-<img id="car-image" class="minion-car" src="./assets/img/minion-car-p.png">
-
+<div class="minion-text">
+    <img class="minion-message" src="./assets/img/minon-messageimg.png">
+    <p id="minion-bubbles">Hello I am Minion #24601 I am your AI minion helper. This site is for minions to accept jobs from your supreme leader, Gru and senior level minions.</p>
+</div>
+<div class="overflow-me">
+    <img id="car-image" class="minion-car" src="./assets/img/minion-car-p.png">
+</div>
 <script src="./js/landingpage.js"></script>
 </body>
 </html>
