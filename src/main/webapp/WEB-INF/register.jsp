@@ -11,19 +11,18 @@
 <jsp:include page="partials/navbar.jsp"/>
 <div class="container">
     <h1>Please fill in your information.</h1>
-
-    <c:if test="${sessionScope.message != null}">
-        <p>ERROR: ${sessionScope.message}</p>
-    </c:if>
-
     <form action="/register" method="post">
 
-        <div class="form-group mb-3">
+        <div class="form-group">
             <label for="username">Username</label>
             <input id="username" name="username" class="form-control" type="text" required>
         </div>
+<%--        checks if username is taken already--%>
+    <c:if test="${sessionScope.usernameTaken}">
+        <p class="text-bg-danger">${sessionScope.message}</p>
+    </c:if>
+        <div class="form-group">
 
-        <div class="form-group mb-3">
             <label for="password">Password</label>
             <input id="password" name="password" class="form-control" type="password" required>
         </div>
