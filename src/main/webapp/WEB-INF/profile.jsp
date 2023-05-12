@@ -5,57 +5,50 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
-    <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
-<div class="container">
+<div class="container mb-3 mt-5">
     <div class="profile">
+        <h1 class="mb-3">Welcome, ${sessionScope.user.username}!</h1>
         <div class="profile-header">
-            <img class="profile-image"
+            <img class="profile-image border border-black border-4 rounded-4"
                  src="https://s3-alpha.figma.com/hub/file/948140848/1f4d8ea7-e9d9-48b7-b70c-819482fb10fb-cover.png"
-                 alt="user_profile">
+                 alt="profile image">
+        </div>
+        <div class="mt-3">
+            <h3>Bio:</h3>
+            <p id="bio">${sessionScope.user.bio}</p>
         </div>
         <div class="profile-edit">
-            <a href="/profile/update">
-                <button class="btn btn-large" id="updateProfileBtn">Edit Profile</button>
-            </a>
+            <a href="/profile/update" class="btn btn-primary">Edit Profile</a>
         </div>
     </div>
 </div>
 
-<div>
-    <h3>BIO</h3>
-    <p id="bio">${sessionScope.user.bio}</p>
-</div>
-</div>
 
-<div class="container">
-    <h1>Welcome, ${sessionScope.user.username}!</h1>
-    <c:choose>
-        <c:when test="${sessionScope.user.villain}">
-            <a href="/ads/create">Create Ad!</a>
-        </c:when>
-        <c:otherwise>
+<div class="container mt-4">
+    <c:if test="${sessionScope.user.villain}">
+        <a href="/ads/create" class="btn btn-primary">Create Ad!</a>
 
-        </c:otherwise>
-    </c:choose>
-</div>
+        <h1 class="my-4">Here Are Your Ads</h1>
 
-<div class="container">
-    <h1>Here Are Your Ads</h1>
-
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
+        <div class="row">
+            <c:forEach var="ad" items="${ads}">
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h2 class="card-title">${ad.title}</h2>
+                            <p class="card-text">${ad.description}</p>
+                            <a href="/ads/update?adId=${ad.id}" class="btn btn-primary btn-sm">Update Ad</a>
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
         </div>
-    </c:forEach>
+    </c:if>
 </div>
 
-
-
-<script src="../js/profile.js"></script>
 </body>
 </html>

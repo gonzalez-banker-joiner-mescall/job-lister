@@ -1,35 +1,39 @@
 body {
-    background-color: mediumseagreen;
+    overflow: hidden;
 }
+
 h1 {
     text-align: center;
+    font-size: 4.5rem !important;
+    margin-top: auto;
 }
+
 .minion-text {
     position: relative;
     width: 400px;
     height: 500px;
     justify-content: right;
     margin-left: auto;
-
-
 }
 
 .minion-message {
     display: block;
-    height: 500px;
-    width: 400px;
+    height: 600px;
+    width: 500px;
 }
 
 .minion-text p {
     position: absolute;
+    width: 372px;
     top: 50%;
-    left: 20%;
+    left:23%;
     transform: translate(-10%, -100%);
     margin: 0;
     padding: 15px;
     font-size: 18px;
     text-align: center;
 }
+
 .minion-container {
     display: flex;
 }
