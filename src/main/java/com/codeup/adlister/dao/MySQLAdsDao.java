@@ -103,7 +103,7 @@ public class MySQLAdsDao implements Ads {
         try{
             String byCategoryQuery = "SELECT a.id, a.title, a.description, a.created, a.user_id FROM ads a JOIN ad_cat ac ON a.id = ac.ad_id JOIN categories c ON c.id = ac.cat_id WHERE c.id = ? ORDER BY a.created DESC";
             PreparedStatement statement = connection.prepareStatement(byCategoryQuery);
-
+            statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
             return createAdsFromResults(resultSet);
 

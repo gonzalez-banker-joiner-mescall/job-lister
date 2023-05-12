@@ -15,42 +15,6 @@
                 <input id="title" name="title" class="form-control" type="text">
             </div>
 
-<%--            CHOOSE WORKER AMOUNT--%>
-
-<%--            <div>--%>
-<%--                <label for="amount">Please Select Your Amount of Workers</label>--%>
-<%--                <div id="amount" class="form-check">--%>
-<%--                    <input class="form-check-input" type="radio" name="amount" id="1-2" checked>--%>
-<%--                    <label class="form-check-label" for="1-2">--%>
-<%--                        1 - 2--%>
-<%--                    </label>--%>
-<%--                </div>--%>
-<%--                <div class="form-check">--%>
-<%--                    <input class="form-check-input" type="radio" name="amount" id="3-5" checked>--%>
-<%--                    <label class="form-check-label" for="3-5">--%>
-<%--                        3 - 5--%>
-<%--                    </label>--%>
-<%--                </div>--%>
-<%--                <div class="form-check">--%>
-<%--                    <input class="form-check-input" type="radio" name="amount" id="5-10">--%>
-<%--                    <label class="form-check-label" for="5-10">--%>
-<%--                        5 - 10--%>
-<%--                    </label>--%>
-<%--                </div>--%>
-<%--                <div class="form-check">--%>
-<%--                    <input class="form-check-input" type="radio" name="amount" id="10-25" checked>--%>
-<%--                    <label class="form-check-label" for="10-25">--%>
-<%--                        10 - 25--%>
-<%--                    </label>--%>
-<%--                </div>--%>
-<%--                <div class="form-check">--%>
-<%--                    <input class="form-check-input" type="radio" name="amount" id="25+" checked>--%>
-<%--                    <label class="form-check-label" for="25+">--%>
-<%--                        25+--%>
-<%--                    </label>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
 <%--            CHOOSE CATEGORY--%>
             <label for="categories">Please Select Your Category</label>
             <div  id="categories">

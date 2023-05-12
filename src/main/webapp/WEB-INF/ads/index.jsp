@@ -5,19 +5,22 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads" />
     </jsp:include>
+<%--    added css link--%>
+    <link rel="stylesheet" href="../../css/ads.css">
 
 </head>
+<title>Get Hired</title>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
-<div class="container">
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<div class="container center">
     <h1>Here Are all the ads!</h1>
     <jsp:include page="/WEB-INF/partials/filter.jsp" />
 
-    <div class="row">
+
+
         <c:forEach var="ad" items="${ads}">
 
-            <div class="col-md-4 border border-primary">
+            <div class="box">
                 <h2>${ad.title}</h2>
                 <p>${ad.description}</p>
                 <a href="/ads/view?adId=${ad.id}">
@@ -26,10 +29,9 @@
             </div>
 
         </c:forEach>
-    </div>
-</div>
 
-<%--BOOTSTRAP--%>
-<%--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>--%>
+</div>
+<%--    added js link--%>
+<script src="../../js/ads.js"></script>
 </body>
 </html>
