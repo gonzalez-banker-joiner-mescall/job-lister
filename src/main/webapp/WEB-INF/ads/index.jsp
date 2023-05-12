@@ -7,6 +7,8 @@
     </jsp:include>
 <%--    added css link--%>
     <link rel="stylesheet" href="../../css/ads.css">
+<%--    added js font style --%>
+    <script src="https://kit.fontawesome.com/60b822ab43.js" crossorigin="anonymous"></script>
 
 </head>
 <title>Get Hired</title>
@@ -24,7 +26,7 @@
                 <h2>${ad.title}</h2>
                 <p>${ad.description}</p>
                 <a href="/ads/view?adId=${ad.id}">
-                    <button name="viewAd">CLICK HERE TO SEE AD</button>
+                    <button class="adButton" name="viewAd"><i class="fa-regular fa-sack-dollar fa-bounce" style="color: #1760de;"></i></button>
                 </a>
             </div>
 
