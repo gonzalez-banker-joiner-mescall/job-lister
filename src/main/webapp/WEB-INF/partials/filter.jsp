@@ -13,6 +13,7 @@
         Filter
     </button>
     <ul class="dropdown-menu">
+<%--        need to connect to the proper parameter for category chosen--%>
         <li><a class="dropdown-item" href="/ads/category?adCat=${ad.category}">Category</a></li>
         <li><a class="dropdown-item" href="/ads/date?adDate=${ad.created}">Date</a></li>
         <li><a class="dropdown-item" href="employer">Employer</a></li>

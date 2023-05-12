@@ -19,4 +19,6 @@ public interface Ads {
     void adCatInsert(Long result, Long category);
 
     Ad findAdById(Long adId);
+
+    List<Ad> findByCategory(Long adCat);
 }
