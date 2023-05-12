@@ -31,6 +31,21 @@ public class CreateAdServlet extends HttpServlet {
         User loggedInUser = (User) request.getSession().getAttribute("user");
         Date date = Date.valueOf(java.time.LocalDate.now());
 
+        String[] categories = request.getParameterValues("category");
+
+
+        if (categories == null) {
+            boolean missingCategory = true;
+            request.getSession().setAttribute("missingCategory", missingCategory);
+            String message = "Missing category.";
+            request.getSession().setAttribute("message", message);
+            response.sendRedirect("/ads/create");
+            return;
+        }
+
+        request.getSession().removeAttribute("missingCategory");
+        request.getSession().removeAttribute("message");
+
         Ad ad = new Ad(
                 loggedInUser.getId(),
                 request.getParameter("title"),
@@ -38,9 +53,9 @@ public class CreateAdServlet extends HttpServlet {
                 date
         );
 
-        String[] categories = request.getParameterValues("category");
-
         Long result = DaoFactory.getAdsDao().insert(ad);
+
+        System.out.println("categories = " + Arrays.toString(categories));
 
         for (String category : categories) {
             DaoFactory.getAdsDao().adCatInsert(result, Long.valueOf(category));

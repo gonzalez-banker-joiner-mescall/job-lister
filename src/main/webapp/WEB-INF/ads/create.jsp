@@ -16,10 +16,15 @@
         <form action="/ads/create" method="post">
             <div class="form-group mb-3">
                 <label for="title">Title</label>
-                <input id="title" name="title" class="form-control" type="text">
+                <input id="title" name="title" class="form-control" type="text" required>
             </div>
             <label for="categories">Please Select Your Category:</label>
-            <div id="categories">
+
+            <c:if test="${sessionScope.missingCategory}">
+                <p class="text-danger">${sessionScope.message}</p>
+            </c:if>
+
+            <div id="categories" class="mb-3">
                 <div class="form-check">
                     <input value="1" class="form-check-input" type="checkbox" name="category"
                            id="constructionMaintenance">
