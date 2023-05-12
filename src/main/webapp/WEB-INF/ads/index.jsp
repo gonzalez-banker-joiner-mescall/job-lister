@@ -7,6 +7,8 @@
     </jsp:include>
 <%--    added css link--%>
     <link rel="stylesheet" href="../../css/ads.css">
+<%--    added background link--%>
+    <link rel="stylesheet" href="../../css/background.css">
 <%--    added js font style --%>
     <script src="https://kit.fontawesome.com/60b822ab43.js" crossorigin="anonymous"></script>
 
@@ -19,22 +21,22 @@
     <jsp:include page="/WEB-INF/partials/filter.jsp" />
 
 
+    <div class="row">
+            <c:forEach var="ad" items="${ads}">
 
-        <c:forEach var="ad" items="${ads}">
+                <div class="box col-md-5">
+                    <article class="boxTwo">
+                        <h2>Job: ${ad.title}</h2>
+                        <p>Details: ${ad.description}</p>
 
-            <div class="box">
-                <article>
-                    <h2>Job: ${ad.title}</h2>
-                    <p>Details: ${ad.description}</p>
+                        <a href="/ads/view?adId=${ad.id}">Click For More:
+                            <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #1760de;"></i>
+                        </a>
+                    </article>
+                </div>
 
-                    <a href="/ads/view?adId=${ad.id}">Click For More:
-                        <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #1760de;"></i>
-                    </a>
-                </article>
-            </div>
-
-        </c:forEach>
-
+            </c:forEach>
+    </div>
 </div>
 <%--    added js link--%>
 <script src="../../js/ads.js"></script>

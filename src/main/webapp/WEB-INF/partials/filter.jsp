@@ -7,6 +7,8 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--    added background link--%>
+<link rel="stylesheet" href="../../css/background.css">
 
 <%--<link rel="stylesheet" href="../../css/ads.css">--%>
 
@@ -26,17 +28,20 @@
         <li><a class="dropdown-item" href="/ads">Clear Filter</a></li>
     </ul>
 </div>
-<div> <c:forEach var="ad" items="${ad}">
+<div class="row">
+     <c:forEach var="ad" items="${ad}">
 
-    <div class="col-md-4 box">
-        <div class="row">
-            <article>
-        <h2>Job: ${ad.title}</h2>
-        <p>Details: ${ad.description}</p>
-                <a href="/ads/view?adId=${ad.id}"><i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #1760de;"></i></a>
-            </article>
+        <div class="col-md-5 box">
+            <div class="row">
+                <article>
+            <h2>Job: ${ad.title}</h2>
+            <p>Details: ${ad.description}</p>
+                    <a href="/ads/view?adId=${ad.id}"><i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #1760de;"></i></a>
+                </article>
+            </div>
         </div>
-    </div>
 
-</c:forEach></div>
+    </c:forEach>
+
+</div>
 </body>

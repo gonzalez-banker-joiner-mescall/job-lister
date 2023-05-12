@@ -4,46 +4,48 @@
 /*    box-sizing: border-box*/
 /*}*/
 
-body {
-    background-color: #231f20;
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /*height: 100vh;*/
-    overflow-x: hidden;
-    margin: 0;
-}
+/*body {*/
+/*    background-color: #231f20;*/
+/*    font-family: 'Lato', sans-serif;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    !*height: 100vh;*!*/
+/*    overflow-x: hidden;*/
+/*    margin: 0;*/
+/*}*/
 
 h1 {
     margin: 10px;
-    color: whitesmoke;
+    color: #fefae0;
 }
 
 .box {
-    background-color: #fce029;
+    background-color: #fefae0;
     color: #0a75bc;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 800px;
-    height: 150px;
+    /*width: 1200px;*/
+    /*height: 150px;*/
     margin: 10px;
     border-radius: 10px;
     box-shadow: 2px 4px 5px rgba(0 ,0 ,0 ,0.3);
     /*This will allow the boxes to slide in from the right*/
-    transform: translateX(400%);
+    transform: translateX(-400%);
     transition: transform 0.4s ease;
+    text-align: left;
 }
 
-article{
+.boxTwo{
     text-align: left;
+    width: 300px;
 }
 
 /*This will allow the boxes to slide in from the left*/
 .box:nth-of-type(even) {
-    transform: translateX(-400%);
+    transform: translateX(400%);
 }
 
 /*this is the starting position for the boxes*/
