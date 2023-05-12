@@ -24,33 +24,34 @@ public class RegisterServlet extends HttpServlet {
         boolean isVillain = Boolean.parseBoolean(request.getParameter("villain"));
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
-//        Boolean isVillain = true;
 
         // validate input
         boolean inputHasErrors = username.isEmpty()
-//            || isVillain.isEmpty()
             || password.isEmpty()
             || (! password.equals(passwordConfirmation));
 
-        if (inputHasErrors) {
-            request.getSession().setAttribute("message", "Invalid Credentials");
-//            request.getSession().setAttribute("messages", "Password is required");
+        boolean usernameTaken;
+        User findUser = DaoFactory.getUsersDao().findByUsername(username);
+        System.out.println(findUser);
+        if (findUser == null) {
+            // create and save a new user
+            User user = new User(username, password, isVillain);
+            // hash the password
+            String hash = Password.hash(user.getPassword());
+            user.setPassword(hash);
+            DaoFactory.getUsersDao().insert(user);
+            response.sendRedirect("/login");
+        } else {
+            usernameTaken = true;
+            request.getSession().setAttribute("usernameTaken", usernameTaken);
+            String message = "That username is already taken, please pick another";
+            request.getSession().setAttribute("message", message);
             response.sendRedirect("/register");
             return;
+
         }
-        request.getSession().removeAttribute("message");
+//        request.getSession().removeAttribute("message");
 
 
-        // create and save a new user
-        User user = new User(username, password, isVillain);
-
-        // hash the password
-
-        String hash = Password.hash(user.getPassword());
-
-        user.setPassword(hash);
-
-        DaoFactory.getUsersDao().insert(user);
-        response.sendRedirect("/login");
     }
 }
