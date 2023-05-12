@@ -23,11 +23,14 @@
         <c:forEach var="ad" items="${ads}">
 
             <div class="box">
-                <h2>${ad.title}</h2>
-                <p>${ad.description}</p>
-                <a href="/ads/view?adId=${ad.id}">
-                    <button class="adButton" name="viewAd"><i class="fa-regular fa-sack-dollar fa-bounce" style="color: #1760de;"></i></button>
-                </a>
+                <article>
+                    <h2>Job: ${ad.title}</h2>
+                    <p>Details: ${ad.description}</p>
+
+                    <a href="/ads/view?adId=${ad.id}">Click For More:
+                        <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #1760de;"></i>
+                    </a>
+                </article>
             </div>
 
         </c:forEach>

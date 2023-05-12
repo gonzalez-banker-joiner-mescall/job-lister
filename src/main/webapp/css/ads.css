@@ -37,6 +37,10 @@ h1 {
     transition: transform 0.4s ease;
 }
 
+article{
+    text-align: left;
+}
+
 /*This will allow the boxes to slide in from the left*/
 .box:nth-of-type(even) {
     transform: translateX(-400%);
@@ -54,4 +58,8 @@ h1 {
 .adButton {
     height: 25px;
     width: 25px;
+}
+
+a {
+    text-decoration: none;
 }
