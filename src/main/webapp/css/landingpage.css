@@ -57,9 +57,18 @@ h1 {
 .minion-car {
     position: absolute;
     right: -700px; /* Minions in car will start off screen to right */
-    top: 56%;
+    top: 41%;
     /*bottom: 0;*/
 }
 .overflow-me {
     float: top;
+}
+.about-img-container {
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+}
+.about-img-container img{
+    height: 300px;
+    width: 300px;
 }

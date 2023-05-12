@@ -2,7 +2,7 @@ window.onscroll = function() {
     var image = document.getElementById("car-image");
     var scrollPosition = window.pageYOffset;
 
-    image.style.left = 100 - scrollPosition * 4.1 + "%";
+    image.style.left = 100 - scrollPosition * .5 + "%";
 }
 
 
