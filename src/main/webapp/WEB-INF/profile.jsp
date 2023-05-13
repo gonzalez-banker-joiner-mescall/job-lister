@@ -24,18 +24,20 @@
 <div class="container mb-3 mt-5">
     <div class="profile">
         <h1 class="mb-3">Welcome, ${sessionScope.user.username}!</h1>
+
         <div class="profile-header">
             <img class="profile-image border border-black border-4 rounded-4"
                  src="https://s3-alpha.figma.com/hub/file/948140848/1f4d8ea7-e9d9-48b7-b70c-819482fb10fb-cover.png"
                  alt="profile image">
         </div>
-        <div class="mt-3">
-            <h3>Bio:</h3>
-            <p id="bio">${sessionScope.user.bio}</p>
+        <div class="mt-3 card">
+            <div class="card-body">
+                <h3 class="card-title">Bio:</h3>
+                <p class="card-text" id="bio">${sessionScope.user.bio}</p>
+                <a href="/profile/update" class="btn btn-primary card-link">Edit Profile</a>
+            </div>
         </div>
-        <div class="profile-edit">
-            <a href="/profile/update" class="btn btn-primary">Edit Profile</a>
-        </div>
+
     </div>
 </div>
 
