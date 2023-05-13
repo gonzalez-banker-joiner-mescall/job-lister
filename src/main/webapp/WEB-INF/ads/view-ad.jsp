@@ -27,7 +27,7 @@
         }
 
         .info {
-            height: 100%;
+            height: 50%;
         }
 
         .card {
@@ -45,6 +45,8 @@
             <div class="card-body">
                 <h5 class="card-title">${ad.title}</h5>
                 <p class="card-text">${ad.description}</p>
+            </div>
+            <div class="card-footer">
                 <a class="btn btn-primary  card-link" onclick="history.back()">Go Back</a>
             </div>
         </div>
