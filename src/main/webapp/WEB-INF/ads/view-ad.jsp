@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../../css/navbar.css">
 
     <style>
-        body{
+        body {
             overflow: hidden;
         }
 
@@ -29,6 +29,10 @@
         .info {
             height: 100%;
         }
+
+        .card {
+            background-color: #fefae0;
+        }
     </style>
 
 </head>
@@ -36,15 +40,11 @@
 <jsp:include page="../partials/navbar.jsp"/>
 
 <section class="container">
-
-
     <div class="info container d-flex justify-content-center align-items-center">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 45%; height: 45%">
             <div class="card-body">
                 <h5 class="card-title">${ad.title}</h5>
                 <p class="card-text">${ad.description}</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
             </div>
         </div>
     </div>
