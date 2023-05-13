@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+body{
+    font-family: 'Bangers', cursive !important;
+}
+
 .navbar{
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.68);
     -webkit-box-shadow: 0 4px 10px 0 rgba(0,0,0,0.68);
