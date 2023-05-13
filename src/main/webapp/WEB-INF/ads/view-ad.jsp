@@ -45,7 +45,7 @@
             <div class="card-body">
                 <h5 class="card-title">${ad.title}</h5>
                 <p class="card-text">${ad.description}</p>
-                <a class="btn btn-primary btn-sm card-link" onclick="history.back()">Go Back</a>
+                <a class="btn btn-primary  card-link" onclick="history.back()">Go Back</a>
             </div>
         </div>
     </div>

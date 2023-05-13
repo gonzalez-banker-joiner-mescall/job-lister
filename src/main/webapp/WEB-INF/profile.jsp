@@ -56,7 +56,7 @@
                             <h2 class="card-title">${ad.title}</h2>
                             <p class="card-text">${ad.description}</p>
 
-                            <a href="/ads/update?adId=${ad.id}" class="btn btn-primary btn-sm card-link">Update Ad</a>
+                            <a href="/ads/update?adId=${ad.id}" class="btn btn-primary  card-link">Update Ad</a>
                         </div>
                     </div>
                 </div>

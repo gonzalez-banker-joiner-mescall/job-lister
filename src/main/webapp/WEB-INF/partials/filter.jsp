@@ -38,7 +38,7 @@
                     <h2 class="card-title">${ad.title}</h2>
                     <p class="card-text">${ad.description}</p>
 
-                    <a class="card-link btn btn-primary btn-sm" href="/ads/view?adId=${ad.id}">Click For More:
+                    <a class="card-link btn btn-primary " href="/ads/view?adId=${ad.id}">Click For More:
                         <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #fefae0;"></i>
                     </a>
                 </div>
