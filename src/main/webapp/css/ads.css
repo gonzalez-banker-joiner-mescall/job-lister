@@ -2,24 +2,24 @@
 
 
 .box {
-    background-color: #fefae0;
-    color: #0a75bc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    /*background-color: #fefae0;*/
+    /*color: #0a75bc;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*margin: 10px;*/
+    /*border-radius: 10px;*/
+    /*box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);*/
     /*This will allow the boxes to slide in from the right*/
     transform: translateX(-400%);
     transition: transform 0.4s ease;
-    text-align: left;
+    /*text-align: left;*/
 }
 
-.boxTwo {
-    text-align: left;
-    width: 300px;
-}
+/*.boxTwo {*/
+/*    text-align: left;*/
+/*    width: 300px;*/
+/*}*/
 
 /*This will allow the boxes to slide in from the left*/
 .box:nth-of-type(even) {
@@ -42,4 +42,5 @@
 
 a {
     text-decoration: none;
+    color: #fefae0;
 }

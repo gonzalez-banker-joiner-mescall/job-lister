@@ -3,39 +3,49 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
+        <jsp:param name="title" value="Viewing All The Ads"/>
     </jsp:include>
-<%--    added css link--%>
+    <%--    added css link--%>
     <link rel="stylesheet" href="../../css/ads.css">
-<%--    added background link--%>
+    <%--    added background link--%>
     <link rel="stylesheet" href="../../css/background.css">
-<%--    added js font style --%>
+    <%--    added js font style --%>
     <script src="https://kit.fontawesome.com/60b822ab43.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        .card {
+            background-color: #fefae0 !important;
+        }
+    </style>
 
 </head>
 <title>Get Hired</title>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container center my-3">
-    <h1>Here Are all the ads!</h1>
-    <jsp:include page="/WEB-INF/partials/filter.jsp" />
+    <h1 class="mb-3">Here Are all the ads!</h1>
+    <jsp:include page="/WEB-INF/partials/filter.jsp"/>
 
 
     <div class="row">
-            <c:forEach var="ad" items="${ads}">
+        <c:forEach var="ad" items="${ads}">
+            <div class="box col-md-6">
+                <div class="boxTwo card mb-3">
+                    <div class="card-body">
+                        <h2 class="card-title">${ad.title}</h2>
+                        <p class="card-text">${ad.description}</p>
 
-                <div class="box col-md-5">
-                    <article class="boxTwo">
-                        <h2>Job: ${ad.title}</h2>
-                        <p>Details: ${ad.description}</p>
-
-                        <a href="/ads/view?adId=${ad.id}">Click For More:
-                            <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #1760de;"></i>
+                        <a class="card-link btn btn-primary btn-sm" href="/ads/view?adId=${ad.id}">Click For More:
+                            <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #fefae0;"></i>
                         </a>
-                    </article>
+                    </div>
                 </div>
-
-            </c:forEach>
+            </div>
+        </c:forEach>
     </div>
 </div>
 <%--    added js link--%>

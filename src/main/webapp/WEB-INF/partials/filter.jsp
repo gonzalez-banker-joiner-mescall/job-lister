@@ -18,26 +18,30 @@
         Filter
     </button>
     <ul class="dropdown-menu">
-<%--        need to connect to the proper parameter for category chosen--%>
+        <%--        need to connect to the proper parameter for category chosen--%>
         <li><a class="dropdown-item" href="/ads/category?adCat=1">Construction & Maintenance</a></li>
         <li><a class="dropdown-item" href="/ads/category?adCat=2">Research & Development</a></li>
         <li><a class="dropdown-item" href="/ads/category?adCat=3">Operations & Logistics</a></li>
         <li><a class="dropdown-item" href="/ads/category?adCat=4">Combat & Defense</a></li>
         <li><a class="dropdown-item" href="/ads/category?adCat=5">Miscellaneous</a></li>
-        <li><hr class="dropdown-divider"></li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
         <li><a class="dropdown-item" href="/ads">Clear Filter</a></li>
     </ul>
 </div>
-<div class="row">
-     <c:forEach var="ad" items="${ad}">
+<div class="row mt-3">
+    <c:forEach var="ad" items="${ad}">
+        <div class="box col-md-6">
+            <div class="boxTwo card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">${ad.title}</h2>
+                    <p class="card-text">${ad.description}</p>
 
-        <div class="col-md-5 box">
-            <div class="row">
-                <article>
-            <h2>Job: ${ad.title}</h2>
-            <p>Details: ${ad.description}</p>
-                    <a href="/ads/view?adId=${ad.id}"><i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #1760de;"></i></a>
-                </article>
+                    <a class="card-link btn btn-primary btn-sm" href="/ads/view?adId=${ad.id}">Click For More:
+                        <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #fefae0;"></i>
+                    </a>
+                </div>
             </div>
         </div>
 

@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="../css/ads.css">
 
     <style>
-        card {
+        body {
+            overflow-x: hidden;
+        }
+
+        .card {
             background-color: #fefae0 !important;
         }
     </style>
@@ -42,14 +46,17 @@
 
         <h1 class="my-4">Here Are Your Ads</h1>
 
-        <div class="row">
+        <div class="row mt-3">
             <c:forEach var="ad" items="${ads}">
-                <div class="box col-md-5">
-                        <article class="boxTwo">
-                            <h2>Job: ${ad.title}</h2>
-                            <p>Details: ${ad.description}</p>
-                            <a href="/ads/update?adId=${ad.id}" class="btn btn-primary btn-sm">Update Ad</a>
-                        </article>
+                <div class="box col-md-6">
+                    <div class="boxTwo card mb-3">
+                        <div class="card-body">
+                            <h2 class="card-title">${ad.title}</h2>
+                            <p class="card-text">${ad.description}</p>
+
+                            <a href="/ads/update?adId=${ad.id}" class="btn btn-primary btn-sm card-link">Update Ad</a>
+                        </div>
+                    </div>
                 </div>
             </c:forEach>
         </div>
@@ -58,3 +65,4 @@
 <script src="../js/ads.js"></script>
 </body>
 </html>
+
