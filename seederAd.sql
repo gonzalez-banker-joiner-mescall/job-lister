@@ -2,11 +2,9 @@ USE joblister_db;
 
 INSERT INTO ads (user_id, title, created, description)
 
-VALUES (1, 'Destroy The Moon', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'I am looking for 4 henchmen to help me destroy the moon!'),
-       (3, 'Bank Heist', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'Need 2 henchmen to aid in robbing bank.'),
-       (7, 'Kill Thor', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'need to punish odins son.'),
-       (8, 'Attack People at Beach', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'Need 15 henchmen to scare beach goers!!!'),
-       (10, 'Rob Parents', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'Parents did a bad time to pay! 2 henchmen needed will pay well!'),
-       (11, 'Steal Magnets', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'I like metal! 100 mutants needed...mutants only!'),
-       (13, 'Build Laser Gun', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'LASER LASER LASER need 4 minions.');
+VALUES (1, 'Banana Transporter', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'Safely transport bananas from the local market to our secret laboratory'),
+       (1, 'Gadget Tester', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'Test out all of the latest gadgets and gizmos that we use in our evil plans'),
+       (1, 'Shark Tank Cleaner', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'Clean and maintain the shark tanks'),
+       (1, 'Mustache Stylist', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'Create and maintain the perfect mustache for our evil schemes. This job requires a steady hand and a love of facial hair.'),
+       (1, 'Junior Mission Coordinator', DATE_FORMAT('2023-03-02', '%y/%m/%d'), 'Responsible for assisting in the planning and coordination of our evil plans and heists.');
 
