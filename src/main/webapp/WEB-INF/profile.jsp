@@ -34,7 +34,10 @@
             <div class="card-body">
                 <h3 class="card-title">Bio:</h3>
                 <p class="card-text" id="bio">${sessionScope.user.bio}</p>
-                <a href="/profile/update" class="btn btn-primary card-link">Edit Profile</a>
+                <div class="card-footer bg-transparent">
+                    <a href="/profile/update" class="btn btn-primary card-link">Edit Profile</a>
+
+                </div>
             </div>
         </div>
 
@@ -54,9 +57,12 @@
                     <div class="boxTwo card mb-3">
                         <div class="card-body">
                             <h2 class="card-title">${ad.title}</h2>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">${ad.date}</h6>
                             <p class="card-text">${ad.description}</p>
 
-                            <a href="/ads/update?adId=${ad.id}" class="btn btn-primary  card-link">Update Ad</a>
+                            <div class="card-footer bg-transparent">
+                                <a href="/ads/update?adId=${ad.id}" class="btn btn-primary  card-link">Update</a>
+                            </div>
                         </div>
                     </div>
                 </div>

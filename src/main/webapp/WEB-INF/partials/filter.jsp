@@ -36,15 +36,16 @@
             <div class="boxTwo card mb-3">
                 <div class="card-body">
                     <h2 class="card-title">${ad.title}</h2>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">${ad.date}</h6>
                     <p class="card-text">${ad.description}</p>
-
-                    <a class="card-link btn btn-primary " href="/ads/view?adId=${ad.id}">Click For More:
-                        <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #fefae0;"></i>
-                    </a>
+                    <div class="card-footer bg-transparent">
+                        <a class="card-link btn btn-primary " href="/ads/view?adId=${ad.id}">Click For More:
+                            <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #fefae0;"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </c:forEach>
 
 </div>

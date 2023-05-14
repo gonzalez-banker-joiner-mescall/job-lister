@@ -44,6 +44,7 @@
         <div class="card" style="width: 45%; height: 45%">
             <div class="card-body">
                 <h5 class="card-title">${ad.title}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">${ad.date}</h6>
                 <p class="card-text">${ad.description}</p>
             </div>
             <div class="card-footer">
