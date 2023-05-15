@@ -31,7 +31,7 @@
     <jsp:include page="/WEB-INF/partials/filter.jsp"/>
 
 
-    <div class="row">
+    <div class="row mt-3">
         <c:forEach var="ad" items="${ads}">
             <div class="box col-md-6">
                 <div class="boxTwo card mb-3">
@@ -39,11 +39,24 @@
                         <h2 class="card-title">${ad.title}</h2>
                         <h6 class="card-subtitle mb-2 text-body-secondary">${ad.date}</h6>
                         <p class="card-text">${ad.description}</p>
-                        <div class="card-footer bg-transparent">
-                            <a class="card-link btn btn-primary " href="/ads/view?adId=${ad.id}">Click For More:
-                                <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #fefae0;"></i>
-                            </a>
-                        </div>
+
+                    </div>
+                    <div class="card-footer bg-transparent d-flex justify-content-between">
+                        <a class="card-link btn btn-primary " href="/ads/view?adId=${ad.id}">Click For More:
+                            <i id="viewAd" class="fa-regular fa-dollar-sign fa-bounce" style="color: #fefae0;"></i>
+                        </a>
+                        <c:if test="${sessionScope.user != null}">
+                            <div class="btn-group" role="group">
+                                <form action="/ads/bookmark" method="post" class="mb-0">
+                                    <input type="hidden" value="${ad.id}" name="id">
+                                    <button class="btn btn-primary" type="submit">Save</button>
+                                </form>
+                                <form action="/ads/remove" method="post" class="mb-0">
+                                    <input type="hidden" value="${ad.id}" name="delete">
+                                    <button class="btn btn-danger" type="submit">Remove</button>
+                                </form>
+                            </div>
+                        </c:if>
                     </div>
                 </div>
             </div>

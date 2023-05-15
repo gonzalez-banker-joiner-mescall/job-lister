@@ -47,9 +47,14 @@
                 <h6 class="card-subtitle mb-2 text-body-secondary">${ad.date}</h6>
                 <p class="card-text">${ad.description}</p>
             </div>
-            <div class="card-footer">
-                <a class="btn btn-primary  card-link" onclick="history.back()">Go Back</a>
-            </div>
+        </div>
+
+        <div class="card-footer">
+            <a class="btn btn-primary  card-link" onclick="history.back()">Go Back</a>
+            <form action="/ads/bookmark" method="post">
+                <input type="hidden" value="${ad.id}" name="id">
+                <button type="submit">Save</button>
+            </form>
         </div>
     </div>
 </section>
