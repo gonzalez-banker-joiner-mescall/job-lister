@@ -52,6 +52,14 @@
                 </select>
             </label>
         </div>
+        <div>
+            <label>Choose profile picture.
+                <select name="profilePic" id="profilePic">
+                    <option value="./assets/img/zelda-minioin.png">Zelda Minion</option>
+                    <option value="./assets/img/mom.jpeg">Minion</option>
+                </select>
+            </label>
+        </div>
         <input type="submit" class="btn btn-primary btn-block">
     </form>
     <div class="form-group mb-3">

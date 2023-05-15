@@ -6,6 +6,24 @@ public class User {
     private String password;
     private String bio;
     private boolean villain;
+    private String profilePic;
+
+    public User(String username, String password, String bio, boolean villain, String profilePic) {
+        this.username = username;
+        this.password = password;
+        this.bio = bio;
+        this.villain = villain;
+        this.profilePic = profilePic;
+    }
+
+    public User(long id, String username, String password, String bio, Boolean villain, String profilePic) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.bio = bio;
+        this.villain = villain;
+        this.profilePic = profilePic;
+    }
 
     public User(long id, String username, String password, boolean villain, String bio) {
         this.id = id;
@@ -77,5 +95,13 @@ public class User {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
     }
 }

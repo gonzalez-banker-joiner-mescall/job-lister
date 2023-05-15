@@ -4,7 +4,6 @@ import com.codeup.adlister.util.Config;
 
 
 import com.codeup.adlister.models.User;
-import com.codeup.adlister.util.Config;
 import com.mysql.cj.jdbc.Driver;
 
 
@@ -57,14 +56,16 @@ public class MySQLUsersDao implements Users {
     }
 
     public void update(User user) {
-        String query = "UPDATE users SET username = ?, password = ?, villain = ?, bio = ? WHERE id = ?";
+        String query = "UPDATE users SET username = ?, password = ?, villain = ?, bio = ?, profilePic = ? WHERE id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getPassword());
             stmt.setBoolean(3, user.isVillain());
             stmt.setString(4, user.getBio());
-            stmt.setLong(5, user.getId());
+            stmt.setString(5, user.getProfilePic());
+            stmt.setLong(6, user.getId());
+
             stmt.executeUpdate();
 
         } catch (SQLException e) {
@@ -92,8 +93,9 @@ public class MySQLUsersDao implements Users {
                 rs.getLong("id"),
                 rs.getString("username"),
                 rs.getString("password"),
+                rs.getString("bio"),
                 rs.getBoolean("villain"),
-                rs.getString("bio")
+                rs.getString("profilePic")
 
         );
     }

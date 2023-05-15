@@ -18,7 +18,7 @@ h1 {
 .quote {
     font-size: 1.2em;
     text-align: center;
-    float: top;
+    /*float: top;*/
     color: gold;
 }
 
@@ -31,7 +31,7 @@ h1 {
     text-align: center;
     bottom: 440px;
     left: 200px;
-    float: top;
+    /*float: top;*/
 }
 .minion-message {
     position: fixed;
@@ -61,7 +61,7 @@ h1 {
     /*bottom: 0;*/
 }
 .overflow-me {
-    float: top;
+    /*float: top;*/
 }
 .about-img-container {
     display: flex;
