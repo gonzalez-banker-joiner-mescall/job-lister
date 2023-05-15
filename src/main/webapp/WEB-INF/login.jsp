@@ -5,10 +5,18 @@
         <jsp:param name="title" value="Please Log In" />
     </jsp:include>
     <link rel="stylesheet" href="../css/background.css">
+    <style>
+        .hangingMinions {
+            position: absolute;
+            height: 650px;
+            width: 280px;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="container mt-5">
+<img class="hangingMinions" src="./assets/img/hangingout.png" alt="minions hanging out" style="float: left; z-index: 102" >
+<div class="container mt-5 col-md-6">
     <h1>Please Log In</h1>
     <form action="/login" method="POST">
         <div class="form-group mb-3">

@@ -13,7 +13,7 @@
         <jsp:param name="title" value="${ad.title}"/>
     </jsp:include>
 
-    <link rel="stylesheet" href="../../css/background.css">
+    <link rel="stylesheet" href="../../css/view-ad.css">
     <link rel="stylesheet" href="../../css/navbar.css">
 
     <style>
@@ -27,7 +27,7 @@
         }
 
         .info {
-            height: 50%;
+            margin-top: 25%;
         }
 
         .card {
