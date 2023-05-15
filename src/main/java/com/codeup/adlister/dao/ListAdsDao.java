@@ -56,6 +56,11 @@ public class ListAdsDao implements Ads {
         return null;
     }
 
+    @Override
+    public List<Ad> savedAds(Long user_id) {
+        return null;
+    }
+
 
     public void delete(long id) {
 

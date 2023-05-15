@@ -101,4 +101,18 @@ public class MySQLUsersDao implements Users {
         );
     }
 
+    @Override
+    public void saveAd(Long user, Long ad) {
+        try {
+            String savedAdQuery = "INSERT INTO saved_ads(user_id, ad_id) VALUES (?, ?)";
+            PreparedStatement statement = connection.prepareStatement(savedAdQuery);
+
+            statement.setLong(1, user);
+            statement.setLong(2, ad);
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

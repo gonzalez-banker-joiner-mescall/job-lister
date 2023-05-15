@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 @WebServlet(name = "controllers.BookmarkServlet", urlPatterns = "/ads/bookmark")
 public class BookmarkServet extends HttpServlet {
@@ -26,6 +27,10 @@ public class BookmarkServet extends HttpServlet {
             return;
         }
 
+        List<Ad> ads = DaoFactory.getAdsDao().savedAds(user.getId());
+
+        //        req.getSession().setAttribute("bookmarks", ads);
+
         req.setAttribute("ads", bookmarks.values());
         req.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(req, resp);
 
@@ -37,8 +42,10 @@ public class BookmarkServet extends HttpServlet {
 
         Long id = Long.valueOf(req.getParameter("id"));
         Ad ad = DaoFactory.getAdsDao().findAdById(id);
-
         bookmarks.put(id, ad);
+
+        //        User user = (User) req.getSession().getAttribute("user");
+        //        DaoFactory.getUsersDao().saveAd(user.getId(), id);
 
         req.getSession().setAttribute("bookmarks", bookmarks);
         resp.sendRedirect("/ads");

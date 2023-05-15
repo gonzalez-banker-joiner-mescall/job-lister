@@ -24,12 +24,12 @@ CREATE TABLE `ad_cat`
 );
 CREATE TABLE `users`
 (
-    `id`       BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `username` VARCHAR(255)    NOT NULL,
-    `password` VARCHAR(255)    NOT NULL,
-    `villain`  BOOLEAN         NOT NULL,
-    `bio`      TEXT            NULL,
-    `profilePic` TEXT          NULL
+    `id`         BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `username`   VARCHAR(255)    NOT NULL,
+    `password`   VARCHAR(255)    NOT NULL,
+    `villain`    BOOLEAN         NOT NULL,
+    `bio`        TEXT            NULL,
+    `profilePic` TEXT            NULL
 );
 
 ALTER TABLE
@@ -43,6 +43,21 @@ CREATE TABLE `ads`
     `created`     DATE            NOT NULL,
     `user_id`     BIGINT UNSIGNED NOT NULL
 );
+
+CREATE TABLE `saved_ads`
+(
+    `user_id` BIGINT UNSIGNED NOT NULL,
+    `ad_id`   BIGINT UNSIGNED NOT NULL
+);
+
+ALTER TABLE
+    `saved_ads`
+    ADD CONSTRAINT `saved_ads_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+        ON DELETE CASCADE;
+ALTER TABLE
+    `saved_ads`
+    ADD CONSTRAINT `saved_ads_ad_id_foreign` FOREIGN KEY (`ad_id`) REFERENCES `ads` (`id`)
+        ON DELETE CASCADE;
 
 ALTER TABLE
     `ad_cat`
