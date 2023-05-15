@@ -63,7 +63,7 @@
                 </select>
             </label>
         </div>
-        <div>
+        <div class="form-group-select mb-3">
             <label>Choose profile picture.
                 <select name="profilePic" id="profilePic">
                     <c:choose>
