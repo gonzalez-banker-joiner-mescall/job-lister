@@ -43,8 +43,8 @@
     <div class="info container d-flex justify-content-center align-items-center">
         <div class="card" style="width: 45%; height: 45%">
             <div class="card-body">
-                <h5 class="card-title">${ad.title}</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">${ad.date}</h6>
+                <h5 class="card-title"><c:out value="${ad.title}"/> </h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary"><c:out value="${ad.date}"/></h6>
                 <p class="card-text">${ad.description}</p>
             </div>
 

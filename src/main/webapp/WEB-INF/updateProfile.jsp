@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: davidbanker
@@ -29,17 +30,17 @@
         <input id="id" name="id" class="form-control" type="hidden" value="${sessionScope.user.id}" required>
         <div class="form-group mb-3">
             <label for="username">Update Username</label>
-            <input id="username" name="username" class="form-control" type="text" value="${sessionScope.user.username}"
+            <input id="username" name="username" class="form-control" type="text" value="<c:out value="${sessionScope.user.username}"/> "
                    required>
         </div>
         <div class="form-group mb-3">
             <label for="bio">Update Bio</label>
-            <input id="bio" name="bio" class="form-control" type="text" value="${sessionScope.user.bio}">
+            <input id="bio" name="bio" class="form-control" type="text" value="<c:out value="${sessionScope.user.bio}"/> ">
         </div>
         <div class="form-group mb-3">
             <label for="password">Update Password</label>
             <input id="password" name="password" class="form-control" type="hidden"
-                   value="${sessionScope.user.password}">
+                   value="<c:out value="${sessionScope.user.password}"/> ">
             <input id="updatedPassword" name="updatedPassword" class="form-control" type="text" value="">
         </div>
         <div class="form-group-select mb-3">
