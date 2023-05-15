@@ -1,4 +1,5 @@
 # Name: Minion_Adlister
+![](https://github.com/gonzalez-banker-joiner-mescall/job-lister/blob/finish-adlister/LandingPage.mov)
 ## Description:
     1) Visitors of our website will be greeted at our landing page by a minion containing a message explaining the site along with some easter eggs contained further down the page.
            1) Landing page (Home) will have the options to:
