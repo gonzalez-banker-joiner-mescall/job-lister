@@ -24,7 +24,7 @@
 <jsp:include page="partials/navbar.jsp"/>
 
 
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-5 col-md-6">
     <h1 class="text-center">Update Profile</h1>
     <form action="/profile/update" method="post">
         <input id="id" name="id" class="form-control" type="hidden" value="${sessionScope.user.id}" required>
@@ -47,9 +47,19 @@
         <div class="form-group-select mb-3">
             <label>Supervillain or Henchman?
                 <select name="villain" id="villain" class="form-select">
-                    <option value="${sessionScope.user.villain}" selected></option>
-                    <option value="true">Supervillain</option>
-                    <option value="false">Henchman</option>
+
+
+                    <c:choose>
+                        <c:when test="${sessionScope.user.villain}">
+                            <option value="true" selected>Supervillain</option>
+                            <option value="false">Henchman</option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="true">Supervillain</option>
+                            <option value="false" selected>Henchman</option>
+                        </c:otherwise>
+                    </c:choose>
+
                 </select>
             </label>
         </div>
@@ -61,7 +71,7 @@
                             <option value="./assets/img/gruprofile.png">Gru</option>
                         </c:when>
                         <c:otherwise>
-                            <option value="${null}">pick a profile</option>
+                            <option value="${sessionScope.user.profilePic}" selected>pick a profile</option>
                             <option value="./assets/img/zelda-minioin.png">Zelda Minion</option>
                             <option value="./assets/img/mom.jpeg">Minion Mom</option>
                             <option value="./assets/img/minion-1.png">minion#273</option>
