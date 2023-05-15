@@ -7,6 +7,28 @@ window.onscroll = function() {
 
 
 
+
+const minionHide = document.getElementById('visibility');
+const minionHides = document.getElementById('visibilityMinion');
+const textHide = document.getElementById('minion-bubbles');
+const showMinion = document.getElementById('minionShows');
+
+minionHide.addEventListener('click', minionGone)
+showMinion.addEventListener('click', minionReturn)
+function minionGone() {
+    minionHide.setAttribute('hidden', '');
+    minionHides.setAttribute('hidden', '');
+    textHide.setAttribute('hidden', '');
+    showMinion.removeAttribute('hidden');
+}
+function minionReturn() {
+    showMinion.setAttribute('hidden', '');
+    minionHide.removeAttribute('hidden');
+    minionHides.removeAttribute('hidden');
+    textHide.removeAttribute('hidden');
+}
+
+
 const target = document.getElementById('car-image');
 
 const observer = new MutationObserver((mutationsList) => {
@@ -27,4 +49,7 @@ const config = { attributes: true };
 
 
 observer.observe(target, config);
+
+
+
 

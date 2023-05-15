@@ -17,11 +17,21 @@
     <p class="quote"><em>"Life Is Just Like That Sometimes. We're Hoping For A Unicorn, And We Get A Goat" - Felonius
         Gru</em></p>
 </div>
+
+<%--minion Ai below--%>
 <div class="minion-text">
-    <img class="minion-message" src="./assets/img/minon-messageimg.png">
+
+    <img id="visibilityMinion" class="minion-message" src="./assets/img/minon-messageimg.png">
+    <button id="visibility"></button>
+
     <p id="minion-bubbles">Hello I am Minion #24601 I am your AI minion helper. This site is for minions to accept jobs
         from your supreme leader, Gru and senior level minions.</p>
+
+    <img id="minionShows" src="./assets/img/minion-favicon.svg" hidden>
+
 </div>
+<%--Minion Ai ends above--%>
+
 <div class="overflow-me">
     <img id="car-image" class="minion-car" src="./assets/img/minion-car-p.png">
 </div>

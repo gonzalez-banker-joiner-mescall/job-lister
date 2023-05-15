@@ -34,14 +34,23 @@
         <h1 class="mb-3">Welcome, <c:out value="${sessionScope.user.username}"/>!</h1>
 
         <div class="profile-header">
-            <img class="profile-image border border-black border-4 rounded-4"
-                 src="${sessionScope.user.profilePic}"
-                 alt="profile image">
+            <c:choose>
+                <c:when test="${sessionScope.user.profilePic eq null}">
+                    <img class="profile-image border border-black border-4 rounded-4"
+                         src="../assets/img/default.png"
+                         alt="profile image">
+                </c:when>
+                <c:otherwise>
+                    <img class="profile-image border border-black border-4 rounded-4"
+                         src="${sessionScope.user.profilePic}"
+                         alt="profile image">
+                </c:otherwise>
+            </c:choose>
         </div>
         <div class="mt-3 card">
             <div class="card-body">
                 <h3 class="card-title">Bio:</h3>
-                <p class="card-text" id="bio"><c:out value="${sessionScope.user.bio}"/> </p>
+                <p class="card-text" id="bio"><c:out value="${sessionScope.user.bio}"/></p>
             </div>
             <div class="card-footer bg-transparent">
                 <a href="/profile/update" class="btn btn-primary card-link">Edit Profile</a>
@@ -63,9 +72,9 @@
                 <div class="box col-md-6">
                     <div class="boxTwo card mb-3">
                         <div class="card-body">
-                            <h2 class="card-title"><c:out value="${ad.title}" /> </h2>
+                            <h2 class="card-title"><c:out value="${ad.title}"/></h2>
                             <h6 class="card-subtitle mb-2 text-body-secondary"><c:out value="${ad.date}"/></h6>
-                            <p class="card-text"><c:out value="${ad.description}" /></p>
+                            <p class="card-text"><c:out value="${ad.description}"/></p>
                         </div>
                         <div class="card-footer bg-transparent">
                             <a href="/ads/update?adId=${ad.id}" class="btn btn-primary  card-link">Update</a>
