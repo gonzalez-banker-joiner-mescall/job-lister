@@ -2,6 +2,7 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.User;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 public interface Users {
@@ -13,4 +14,6 @@ public interface Users {
     void delete(Long userId);
 
     void updateImg(User user);
+
+    ResultSet retrieveImg(User user);
 }

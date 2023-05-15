@@ -1,17 +1,19 @@
 package com.codeup.adlister.models;
 
+import com.mysql.cj.jdbc.Blob;
+
 import javax.servlet.http.Part;
 import java.io.InputStream;
-import java.sql.Blob;
 
 public class User {
+
     private long id;
     private String username;
     private String password;
     private String bio;
     private boolean villain;
 
-    private InputStream img;
+    private Blob img;
 
     public User(long id, String username, String password, boolean villain, String bio) {
         this.id = id;
@@ -46,10 +48,20 @@ public class User {
         this.password = password;
     }
 
-    public User(long id, InputStream img) {
+    public User(long id, Blob img) {
         this.id = id;
         this.img = img;
     }
+
+    public User(long id, String username, String password, boolean villain, String bio, Blob img) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.villain = villain;
+        this.bio = bio;
+        this.img = img;
+    }
+
 
     public long getId() {
         return id;
@@ -91,7 +103,7 @@ public class User {
         this.bio = bio;
     }
 
-    public InputStream getImg() { return img;
+    public Blob getImg() { return img;
     }
-    public void setImg(InputStream img) {this.img = img;}
+    public void setImg(Blob img) {this.img = img;}
 }

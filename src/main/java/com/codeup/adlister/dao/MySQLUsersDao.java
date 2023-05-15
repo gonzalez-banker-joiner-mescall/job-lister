@@ -1,10 +1,6 @@
 package com.codeup.adlister.dao;
-
 import com.codeup.adlister.util.Config;
-
-
 import com.codeup.adlister.models.User;
-import com.codeup.adlister.util.Config;
 import com.mysql.cj.jdbc.Driver;
 
 
@@ -85,6 +81,30 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    public void updateImgString(User user) {
+//        String query = "UPDATE users SET imgString = ? WHERE id = ?";
+//        try {
+//            PreparedStatement stmt = connection.prepareStatement(query);
+//            stmt.setString(1, user.getImgString());
+//            stmt.setLong(2, user.getId());
+//            stmt.executeUpdate();
+//
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error creating new user", e);
+//        }
+    }
+
+    public ResultSet retrieveImg(User user) {
+        String query = "SELECT img FROM users WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, user.getId());
+            return (ResultSet) extractUser(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error getting image", e);
+        }
+    }
+
     public void delete(Long id) {
         String query = "DELETE FROM users WHERE id = ?";
         try {
@@ -100,14 +120,12 @@ public class MySQLUsersDao implements Users {
         if (!rs.next()) {
             return null;
         }
-
         return new User(
                 rs.getLong("id"),
                 rs.getString("username"),
                 rs.getString("password"),
                 rs.getBoolean("villain"),
                 rs.getString("bio")
-
         );
     }
 

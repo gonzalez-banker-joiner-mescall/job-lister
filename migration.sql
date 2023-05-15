@@ -29,8 +29,7 @@ CREATE TABLE `users`
     `password` VARCHAR(255)    NOT NULL,
     `villain`  BOOLEAN         NOT NULL,
     `bio`      TEXT            NULL,
-    `img`      LONGBLOB        NULL
-);
+    `img`      LONGBLOB        NULL);
 
 ALTER TABLE
     `users`
