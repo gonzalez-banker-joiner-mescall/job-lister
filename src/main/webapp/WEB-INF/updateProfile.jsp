@@ -65,7 +65,7 @@
         </div>
         <div class="form-group-select mb-3">
             <label>Choose profile picture.
-                <select name="profilePic" id="profilePic">
+                <select class="form-select" name="profilePic" id="profilePic">
                     <c:choose>
                         <c:when test="${sessionScope.user.username eq 'gru'}">
                             <option value="./assets/img/gruprofile.png">Gru</option>
