@@ -14,16 +14,19 @@ import java.util.HashMap;
 
 @WebServlet(name = "controllers.BookmarkServlet", urlPatterns = "/ads/bookmark")
 public class BookmarkServet extends HttpServlet {
-
-
-
     HashMap<Long, Ad> bookmarks = new HashMap<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.setAttribute("ads", bookmarks.values());
+        User user = (User) req.getSession().getAttribute("user");
 
+        if (req.getSession().getAttribute("user") == null) {
+            resp.sendRedirect("/login");
+            return;
+        }
+
+        req.setAttribute("ads", bookmarks.values());
         req.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(req, resp);
 
     }
@@ -38,9 +41,6 @@ public class BookmarkServet extends HttpServlet {
         bookmarks.put(id, ad);
 
         req.getSession().setAttribute("bookmarks", bookmarks);
-
-
         resp.sendRedirect("/ads");
-
     }
 }
