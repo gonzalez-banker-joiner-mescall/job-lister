@@ -17,7 +17,9 @@
                    2) Update Bio
                    3) Update Password
                    4) Supervillain or Henchman option
-                   5) Upon submitting profile update, the site will redirect the user back to their profile page
+                   5) Choose a Profile Pic
+                   6) Upon submitting profile update, the site will redirect the user back to their profile page
+                   7) Delete Profile
            2) Create Ad
                1) Create Ad has options to:
                    1) Create a title for thier ad
