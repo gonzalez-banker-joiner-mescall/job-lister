@@ -27,6 +27,7 @@
     <img id="car-image" class="minion-car" src="./assets/img/minion-car-p.png">
 </div>
 
+<div class="container mt-5">
 <div>
     <h2>About</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -46,6 +47,7 @@
         Minions(that's us). With his brain and our numbers we plan to complete all jobs posted and aid him in world
         domination. BANANAS! BANANAS! BANANAS!</p>
     <img class="gru-coffee" src="./assets/img/coffee-gru.png">
+</div>
 </div>
 <script src="./js/landingpage.js"></script>
 </body>
