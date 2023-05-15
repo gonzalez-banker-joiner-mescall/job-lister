@@ -32,6 +32,7 @@ h1 {
     bottom: 440px;
     left: 200px;
     /*float: top;*/
+    z-index: 100;
 }
 .minion-message {
     position: fixed;
@@ -59,6 +60,7 @@ h1 {
     right: -700px; /* Minions in car will start off screen to right */
     top: 41%;
     /*bottom: 0;*/
+    z-index: 101;
 }
 .overflow-me {
     /*float: top;*/
@@ -122,3 +124,41 @@ footer {
     right: 80px;
     bottom: 0;
 }
+
+@media screen and (min-height: 200px) and (max-height: 350px) {
+    .minion-car {
+        top: 0;
+    }
+}
+
+@media screen and (min-height: 480px) and (max-height: 599px) {
+    .minion-car {
+        top: 20%;
+    }
+}
+
+@media screen and (min-height: 600px) and (max-height: 699px) {
+    .minion-car {
+        top: 41%;
+    }
+}
+
+@media screen and (min-height: 700px) and (max-height: 799px) {
+    .minion-car {
+        top: 46%;
+    }
+}
+
+@media screen and (min-height: 800px) {
+    .minion-car {
+        top: 51%;
+    }
+}
+
+
+
+
+
+
+
+
