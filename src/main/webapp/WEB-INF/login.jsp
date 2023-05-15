@@ -15,6 +15,9 @@
             <label for="username">Username</label>
             <input id="username" name="username" class="form-control" type="text" required>
         </div>
+        <c:if test="${sessionScope.wrongUsername}">
+            <p class="text-danger">${sessionScope.messageUser}</p>
+        </c:if>
         <div class="form-group mb-3">
             <label for="password">Password</label>
             <input id="password" name="password" class="form-control" type="password" required>

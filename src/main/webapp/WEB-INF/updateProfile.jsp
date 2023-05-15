@@ -35,7 +35,8 @@
         </div>
         <div class="form-group mb-3">
             <label for="bio">Update Bio</label>
-            <input id="bio" name="bio" class="form-control" type="text" value="<c:out value="${sessionScope.user.bio}"/> ">
+            <input id="bio" name="bio" class="form-control" type="text"
+                   value="<c:out value="${sessionScope.user.bio}"/> ">
         </div>
         <div class="form-group mb-3">
             <label for="password">Update Password</label>
@@ -55,9 +56,25 @@
         <div>
             <label>Choose profile picture.
                 <select name="profilePic" id="profilePic">
-                    <option value="${null}">null</option>
-                    <option value="./assets/img/zelda-minioin.png">Zelda Minion</option>
-                    <option value="./assets/img/mom.jpeg">Minion</option>
+                    <c:choose>
+                        <c:when test="${sessionScope.user.username eq 'gru'}">
+                            <option value="./assets/img/gruprofile.png">Gru</option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${null}">pick a profile</option>
+                            <option value="./assets/img/zelda-minioin.png">Zelda Minion</option>
+                            <option value="./assets/img/mom.jpeg">Minion Mom</option>
+                            <option value="./assets/img/minion-1.png">minion#273</option>
+                            <option value="./assets/img/minion-2.png">minion#3901</option>
+                            <option value="./assets/img/minion-3.png">minion#9213</option>
+                            <option value="./assets/img/minion-6.png">minion#23094</option>
+                            <option value="./assets/img/minion-7.png">minion#2333</option>
+                            <c:if test="${sessionScope.user.villain}">
+                                <option value="./assets/img/minion-5.png">minion Admin#4</option>
+                                <option value="./assets/img/minion-4.png">minion Admin#401</option>
+                            </c:if>
+                        </c:otherwise>
+                    </c:choose>
                 </select>
             </label>
         </div>
