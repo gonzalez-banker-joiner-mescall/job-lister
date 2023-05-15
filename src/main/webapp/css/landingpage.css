@@ -72,3 +72,35 @@ h1 {
     height: 300px;
     width: 300px;
 }
+.minion-banana {
+    margin-left: 10px;
+}
+.minion-pc {
+    margin-right: 10px;
+}
+.gru-coffee {
+   display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-bottom {
+    margin: 0 50px;
+}
+hr {
+    margin-top: 3em;
+    margin-bottom: 2em;
+    height: 5px;
+    background-color: black;
+    opacity: 100%;
+}
+.foot-line {
+    border-top: 9px dotted gold;
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: transparent;
+}
+footer {
+    color: yellow;
+}
