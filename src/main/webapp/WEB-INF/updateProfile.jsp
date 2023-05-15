@@ -30,7 +30,7 @@
         <input id="id" name="id" class="form-control" type="hidden" value="${sessionScope.user.id}" required>
         <div class="form-group mb-3">
             <label for="username">Update Username</label>
-            <input id="username" name="username" class="form-control" type="text" value="<c:out value="${sessionScope.user.username}"/> "
+            <input id="username" name="username" class="form-control" type="text" value="${sessionScope.user.username}"
                    required>
         </div>
         <div class="form-group mb-3">
@@ -40,7 +40,7 @@
         <div class="form-group mb-3">
             <label for="password">Update Password</label>
             <input id="password" name="password" class="form-control" type="hidden"
-                   value="<c:out value="${sessionScope.user.password}"/> ">
+                   value="${sessionScope.user.password}">
             <input id="updatedPassword" name="updatedPassword" class="form-control" type="text" value="">
         </div>
         <div class="form-group-select mb-3">
@@ -55,6 +55,7 @@
         <div>
             <label>Choose profile picture.
                 <select name="profilePic" id="profilePic">
+                    <option value="${null}">null</option>
                     <option value="./assets/img/zelda-minioin.png">Zelda Minion</option>
                     <option value="./assets/img/mom.jpeg">Minion</option>
                 </select>

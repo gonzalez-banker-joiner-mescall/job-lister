@@ -16,6 +16,14 @@
         .card {
             background-color: #fefae0 !important;
         }
+
+        /*.profile-image {*/
+        /*    width: 150px;*/
+        /*    height: 150px;*/
+        /*    border: black 4px solid;*/
+        /*    border-radius: 25%;*/
+        /*    background-color: blanchedalmond;*/
+        /*}*/
     </style>
 </head>
 <body>

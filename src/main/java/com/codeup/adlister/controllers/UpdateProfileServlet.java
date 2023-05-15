@@ -25,6 +25,9 @@ public class UpdateProfileServlet extends HttpServlet {
         boolean villain = Boolean.parseBoolean(request.getParameter("villain"));
         String password;
         String profilePic = request.getParameter("profilePic");
+        if (profilePic.isEmpty()) {
+            profilePic = null;
+        }
         if(request.getParameter("updatedPassword") == null || request.getParameter("updatedPassword").isEmpty()) {
             password = request.getParameter("password");
         } else {
