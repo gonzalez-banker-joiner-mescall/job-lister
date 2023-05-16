@@ -63,31 +63,31 @@
                 </select>
             </label>
         </div>
-        <div class="form-group-select mb-3">
-            <label>Choose profile picture.
-                <select class="form-select" name="profilePic" id="profilePic">
-                    <c:choose>
-                        <c:when test="${sessionScope.user.username eq 'gru'}">
-                            <option value="./assets/img/gruprofile.png">Gru</option>
-                        </c:when>
-                        <c:otherwise>
-                            <option value="${sessionScope.user.profilePic}" selected>pick a profile</option>
-                            <option value="./assets/img/zelda-minioin.png">Zelda Minion</option>
-                            <option value="./assets/img/mom.jpeg">Minion Mom</option>
-                            <option value="./assets/img/minion-1.png">minion#273</option>
-                            <option value="./assets/img/minion-2.png">minion#3901</option>
-                            <option value="./assets/img/minion-3.png">minion#9213</option>
-                            <option value="./assets/img/minion-6.png">minion#23094</option>
-                            <option value="./assets/img/minion-7.png">minion#2333</option>
-                            <c:if test="${sessionScope.user.villain}">
-                                <option value="./assets/img/minion-5.png">minion Admin#4</option>
-                                <option value="./assets/img/minion-4.png">minion Admin#401</option>
-                            </c:if>
-                        </c:otherwise>
-                    </c:choose>
-                </select>
-            </label>
-        </div>
+<%--        <div class="form-group-select mb-3">--%>
+<%--            <label>Choose profile picture.--%>
+<%--                <select class="form-select" name="profilePic" id="profilePic">--%>
+<%--                    <c:choose>--%>
+<%--                        <c:when test="${sessionScope.user.username eq 'gru'}">--%>
+<%--                            <option value="./assets/img/gruprofile.png">Gru</option>--%>
+<%--                        </c:when>--%>
+<%--                        <c:otherwise>--%>
+<%--                            <option value="${sessionScope.user.profilePic}" selected>pick a profile</option>--%>
+<%--                            <option value="./assets/img/zelda-minioin.png">Zelda Minion</option>--%>
+<%--                            <option value="./assets/img/mom.jpeg">Minion Mom</option>--%>
+<%--                            <option value="./assets/img/minion-1.png">minion#273</option>--%>
+<%--                            <option value="./assets/img/minion-2.png">minion#3901</option>--%>
+<%--                            <option value="./assets/img/minion-3.png">minion#9213</option>--%>
+<%--                            <option value="./assets/img/minion-6.png">minion#23094</option>--%>
+<%--                            <option value="./assets/img/minion-7.png">minion#2333</option>--%>
+<%--                            <c:if test="${sessionScope.user.villain}">--%>
+<%--                                <option value="./assets/img/minion-5.png">minion Admin#4</option>--%>
+<%--                                <option value="./assets/img/minion-4.png">minion Admin#401</option>--%>
+<%--                            </c:if>--%>
+<%--                        </c:otherwise>--%>
+<%--                    </c:choose>--%>
+<%--                </select>--%>
+<%--            </label>--%>
+<%--        </div>--%>
         <input type="submit" class="btn btn-primary btn-block">
     </form>
     <div class="form-group mb-3">

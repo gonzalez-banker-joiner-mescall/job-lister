@@ -43,10 +43,10 @@
                  src="../showPic.jsp"
                  alt="profile image"/>
         </div>
-        <div class="input-group m-3">
+        <div class="input-group mb-3">
             <form method="post" action="profile" enctype="multipart/form-data">
             <input type="file" name="profilePic" class="form-control" id="inputGroupFile02">
-                <input type="submit" value="upload">
+                <input type="submit" class="btn btn-primary" value="upload">
             </form>
         </div>
         <div class="mt-3">
