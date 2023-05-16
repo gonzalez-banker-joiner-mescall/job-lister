@@ -17,7 +17,6 @@ import java.util.Arrays;
 @MultipartConfig(maxFileSize = 16177215)
 public class ViewProfileServlet extends HttpServlet {
     private Connection connection;
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
         if (request.getSession().getAttribute("user") == null) {
@@ -52,13 +51,9 @@ public class ViewProfileServlet extends HttpServlet {
             throw new RuntimeException("Error creating new user", e);
         }
     }
-
-
     PrintWriter out;
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
@@ -77,8 +72,6 @@ public class ViewProfileServlet extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new user", e);
         }
-
         response.sendRedirect("/profile");
-
     }
 }

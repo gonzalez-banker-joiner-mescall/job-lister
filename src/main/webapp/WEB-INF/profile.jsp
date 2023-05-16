@@ -38,10 +38,10 @@
         <h1 class="mb-3">Welcome, <c:out value="${sessionScope.user.username}"/>!</h1>
 
         <div class="profile-header">
-            <img class="profile-image border border-black border-4 rounded-4"
 <!--               src is pulling the image from the showPic jsp    -->
-                 src="../showPic.jsp". 
-                 alt="profile image">
+            <img class="profile-image border border-black border-4 rounded-4"
+                 src="../showPic.jsp"
+                 alt="profile image"/>
         </div>
         <div class="input-group m-3">
             <form method="post" action="profile" enctype="multipart/form-data">
