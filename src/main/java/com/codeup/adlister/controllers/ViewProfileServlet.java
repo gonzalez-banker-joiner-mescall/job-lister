@@ -58,14 +58,6 @@ public class ViewProfileServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        InputStream inputStream = null;
-//        Part filePart = request.getPart("profilePic");
-//        inputStream = filePart.getInputStream();
-////        User user = new User(request.getSession(user.getId(), (Blob) inputStream));
-//        User user = (User) request.getSession().getAttribute("user");
-//        user.setImg(inputStream);
-//        DaoFactory.getUsersDao().updateImg(user);
-
 
         try {
             DriverManager.registerDriver(new Driver());
@@ -74,7 +66,6 @@ public class ViewProfileServlet extends HttpServlet {
                     "codeup");
             response.setContentType("text/html;charset=UTF-8");
             out = response.getWriter();
-            int result = 0;
             Part filePart = request.getPart("profilePic");
             User user = (User) request.getSession().getAttribute("user");
             String query = "UPDATE users SET img = ? WHERE id = ?";

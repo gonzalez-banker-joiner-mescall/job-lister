@@ -14,6 +14,4 @@ public interface Users {
     void delete(Long userId);
 
     void updateImg(User user);
-
-    ResultSet retrieveImg(User user);
 }
