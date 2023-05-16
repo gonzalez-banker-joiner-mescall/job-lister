@@ -1,8 +1,5 @@
 package com.codeup.adlister.dao;
-
 import com.codeup.adlister.util.Config;
-
-
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
@@ -66,9 +63,19 @@ public class MySQLUsersDao implements Users {
             stmt.setString(4, user.getBio());
             stmt.setString(5, user.getProfilePic());
             stmt.setLong(6, user.getId());
-
             stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating new user", e);
+        }
+    }
 
+    public void updateImg(User user) {
+        String query = "UPDATE users SET img = ? WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setBlob(1, user.getImg());
+            stmt.setLong(2, user.getId());
+            stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new user", e);
         }
@@ -89,7 +96,6 @@ public class MySQLUsersDao implements Users {
         if (!rs.next()) {
             return null;
         }
-
         return new User(
                 rs.getLong("id"),
                 rs.getString("username"),
@@ -97,7 +103,6 @@ public class MySQLUsersDao implements Users {
                 rs.getString("bio"),
                 rs.getBoolean("villain"),
                 rs.getString("profilePic")
-
         );
     }
 
@@ -106,11 +111,9 @@ public class MySQLUsersDao implements Users {
         try {
             String savedAdQuery = "INSERT INTO saved_ads(user_id, ad_id) VALUES (?, ?)";
             PreparedStatement statement = connection.prepareStatement(savedAdQuery);
-
             statement.setLong(1, user);
             statement.setLong(2, ad);
             statement.executeUpdate();
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
