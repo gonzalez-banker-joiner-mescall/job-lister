@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: zluigon
@@ -11,29 +12,31 @@
     <jsp:include page="../partials/head.jsp">
         <jsp:param name="title" value="Update Ads"/>
     </jsp:include>
+
+    <link rel="stylesheet" href="../../css/background.css">
 </head>
 <body>
 
 <jsp:include page="../partials/navbar.jsp"/>
 
-<div class="container">
-<form action="/ads/update" method="post">
-    <input type="hidden" value="${ad.id}" name="id">
-    <input type="hidden" value="${ad.userId}" name="userId">
+<div class="container mt-5">
+    <form action="/ads/update" method="post">
+        <input type="hidden" value="${ad.id}" name="id">
+        <input type="hidden" value="${ad.userId}" name="userId">
 
-    <div class="form-group">
-        <label for="updateTitle">Update Title:</label>
-        <input class="form-control" type="text" name="updateTitle" id="updateTitle" value="${ad.title}">
-    </div>
+        <div class="form-group mb-3">
+            <label for="updateTitle">Update Title:</label>
+            <input class="form-control" type="text" name="updateTitle" id="updateTitle" value="<c:out value="${ad.title}"/>">
+        </div>
 
-    <div class="form-group">
-        <label for="updateDescription">Update Description:</label>
-        <textarea class="form-control" name="updateDescription" id="updateDescription" rows="4">${ad.description}</textarea>
-    </div>
+        <div class="form-group mb-3">
+            <label for="updateDescription">Update Description:</label>
+            <textarea class="form-control" name="updateDescription" id="updateDescription" rows="4"><c:out value="${ad.description}"/> </textarea>
+        </div>
 
-    <button type="submit">Save</button>
-</form>
-    <a href="/ads/delete?adId=${ad.id}" onclick="return confirm('Are you sure about that?')"><button>Delete</button></a>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <a href="/ads/delete?adId=${ad.id}" onclick="return confirm('Are you sure about that?')" class="btn btn-danger">Delete</a>
 </div>
 </body>
 </html>

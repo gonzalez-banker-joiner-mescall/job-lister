@@ -37,12 +37,13 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-        String query = "INSERT INTO users(username, password, villain) VALUES (?, ?, ?)";
+        String query = "INSERT INTO users(username, password, villain, profilePic) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getPassword());
             stmt.setBoolean(3, user.isVillain());
+            stmt.setString(4, user.getProfilePic());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -53,16 +54,16 @@ public class MySQLUsersDao implements Users {
     }
 
     public void update(User user) {
-        String query = "UPDATE users SET username = ?, password = ?, villain = ?, bio = ? WHERE id = ?";
+        String query = "UPDATE users SET username = ?, password = ?, villain = ?, bio = ?, profilePic = ? WHERE id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getPassword());
             stmt.setBoolean(3, user.isVillain());
             stmt.setString(4, user.getBio());
-            stmt.setLong(5, user.getId());
+            stmt.setString(5, user.getProfilePic());
+            stmt.setLong(6, user.getId());
             stmt.executeUpdate();
-
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new user", e);
         }
@@ -75,7 +76,6 @@ public class MySQLUsersDao implements Users {
             stmt.setBlob(1, user.getImg());
             stmt.setLong(2, user.getId());
             stmt.executeUpdate();
-
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new user", e);
         }
@@ -100,9 +100,22 @@ public class MySQLUsersDao implements Users {
                 rs.getLong("id"),
                 rs.getString("username"),
                 rs.getString("password"),
+                rs.getString("bio"),
                 rs.getBoolean("villain"),
-                rs.getString("bio")
+                rs.getString("profilePic")
         );
     }
 
+    @Override
+    public void saveAd(Long user, Long ad) {
+        try {
+            String savedAdQuery = "INSERT INTO saved_ads(user_id, ad_id) VALUES (?, ?)";
+            PreparedStatement statement = connection.prepareStatement(savedAdQuery);
+            statement.setLong(1, user);
+            statement.setLong(2, ad);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

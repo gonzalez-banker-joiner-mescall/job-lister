@@ -24,12 +24,16 @@ public class UpdateProfileServlet extends HttpServlet {
         String bio = request.getParameter("bio");
         boolean villain = Boolean.parseBoolean(request.getParameter("villain"));
         String password;
+        String profilePic = request.getParameter("profilePic");
+        if (profilePic.isEmpty()) {
+            profilePic = null;
+        }
         if(request.getParameter("updatedPassword") == null || request.getParameter("updatedPassword").isEmpty()) {
             password = request.getParameter("password");
         } else {
             password = Password.hash(request.getParameter("updatedPassword"));
         }
-        User updatedUser = new User(id, username, password, villain, bio);
+        User updatedUser = new User(id, username, password, bio, villain, profilePic);
         DaoFactory.getUsersDao().update(updatedUser);
         request.getSession().setAttribute("user", updatedUser);
         response.sendRedirect("/profile");

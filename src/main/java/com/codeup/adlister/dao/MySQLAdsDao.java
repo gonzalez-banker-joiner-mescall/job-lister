@@ -159,6 +159,19 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
+    public List<Ad> savedAds(Long user_id) {
+        try {
+            String adQuery = "SELECT  a.id, a.user_id, a.title, a.description, a.created FROM ads a JOIN saved_ads sa on a.id = sa.ad_id JOIN users u on u.id = sa.user_id WHERE sa.user_id = ?";
+            PreparedStatement statement = connection.prepareStatement(adQuery);
+            statement.setLong(1, user_id);
+
+            ResultSet resultSet = statement.executeQuery();
+            return createAdsFromResults(resultSet);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     public static void main(String[] args) {
         Date date = Date.valueOf(java.time.LocalDate.now());

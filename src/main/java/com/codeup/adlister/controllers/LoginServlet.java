@@ -27,24 +27,33 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
+        boolean wrongUsername;
+        boolean wrongPassword;
+
         if (user == null) {
-            response.sendRedirect("/register");
+            wrongUsername = true;
+            request.getSession().setAttribute("wrongUsername", wrongUsername);
+            String message = "Username invalid or does not exist.";
+            request.getSession().setAttribute("messageUser", message);
+            response.sendRedirect("/login");
             return;
         }
 
+        request.getSession().removeAttribute("wrongUsername");
+        request.getSession().removeAttribute("messageUser");
+
         boolean validAttempt = Password.check(password, user.getPassword());
 
-        boolean wrongPassword;
-
         if (validAttempt) {
-            request.removeAttribute("wrongPassword");
+            request.getSession().removeAttribute("wrongPassword");
+            request.getSession().removeAttribute("messagePW");
             request.getSession().setAttribute("user", user);
             response.sendRedirect("/profile");
         } else {
             wrongPassword = true;
             request.getSession().setAttribute("wrongPassword", wrongPassword);
             String message = "Incorrect password.";
-            request.getSession().setAttribute("message", message);
+            request.getSession().setAttribute("messagePW", message);
             response.sendRedirect("/login");
         }
     }

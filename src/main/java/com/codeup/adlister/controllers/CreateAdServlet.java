@@ -38,13 +38,13 @@ public class CreateAdServlet extends HttpServlet {
             boolean missingCategory = true;
             request.getSession().setAttribute("missingCategory", missingCategory);
             String message = "Missing category.";
-            request.getSession().setAttribute("message", message);
+            request.getSession().setAttribute("messageCat", message);
             response.sendRedirect("/ads/create");
             return;
         }
 
         request.getSession().removeAttribute("missingCategory");
-        request.getSession().removeAttribute("message");
+        request.getSession().removeAttribute("messageCat");
 
         Ad ad = new Ad(
                 loggedInUser.getId(),

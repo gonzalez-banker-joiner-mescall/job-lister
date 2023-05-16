@@ -21,7 +21,7 @@
             <label for="categories">Please Select Your Category:</label>
 
             <c:if test="${sessionScope.missingCategory}">
-                <p class="text-danger">${sessionScope.message}</p>
+                <p class="text-danger">${sessionScope.messageCat}</p>
             </c:if>
 
             <div id="categories" class="mb-3">

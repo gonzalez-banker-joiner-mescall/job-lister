@@ -12,6 +12,24 @@ public class User {
     private String password;
     private String bio;
     private boolean villain;
+    private String profilePic;
+
+    public User(String username, String password, String bio, boolean villain, String profilePic) {
+        this.username = username;
+        this.password = password;
+        this.bio = bio;
+        this.villain = villain;
+        this.profilePic = profilePic;
+    }
+
+    public User(long id, String username, String password, String bio, Boolean villain, String profilePic) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.bio = bio;
+        this.villain = villain;
+        this.profilePic = profilePic;
+    }
 
     private Blob img;
 
@@ -106,4 +124,12 @@ public class User {
     public Blob getImg() { return img;
     }
     public void setImg(Blob img) {this.img = img;}
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
 }

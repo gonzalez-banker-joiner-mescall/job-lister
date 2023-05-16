@@ -21,4 +21,6 @@ public interface Ads {
     Ad findAdById(Long adId);
 
     List<Ad> findByCategory(Long adCat);
+
+    List<Ad> savedAds(Long user_id);
 }

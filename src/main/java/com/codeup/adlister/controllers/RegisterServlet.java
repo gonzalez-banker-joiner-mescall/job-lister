@@ -27,8 +27,8 @@ public class RegisterServlet extends HttpServlet {
 
         // validate input
         boolean inputHasErrors = username.isEmpty()
-            || password.isEmpty()
-            || (! password.equals(passwordConfirmation));
+                || password.isEmpty()
+                || (!password.equals(passwordConfirmation));
 
         boolean usernameTaken;
         User findUser = DaoFactory.getUsersDao().findByUsername(username);

@@ -1,11 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<nav class="navbar sticky-top navbar-expand">
+<nav class="navbar navbar-expand">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>
         <div class="navbar-nav">
+            <a class="nav-link" href="/">Home</a>
             <c:choose>
                 <c:when test="${sessionScope.user == null}">
                     <a class="nav-link" href="/login">Login</a></li>
@@ -19,3 +20,4 @@
         </div>
     </div>
 </nav>
+
